@@ -1,0 +1,36 @@
+body {
+	color: $black;
+	font-family: $fi;
+	font-size: 16px;
+	line-height: 150%;
+	font-weight: 400;
+	overflow-x: hidden;
+	overflow-y: auto;
+	background: $white;
+	@media ($max767) {
+		font-size: 14px;
+	}
+	&._lock{
+		overflow: hidden;
+		.header-main {
+			@media ($min1024) {
+				padding-right: 21px;
+			}
+		}
+	}
+}
+.wrapper {
+	display: flex;
+	flex-direction: column;
+	width: 100%;
+	min-height: 100%;
+	overflow-x: hidden;
+}
+.container{
+	max-width: 1248px;
+	width: 100%;
+	padding-right: 16px;
+	padding-left: 16px;
+	margin-right: auto;
+	margin-left: auto;
+}

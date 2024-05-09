@@ -1,0 +1,307 @@
+.header
+	position: absolute
+	top: 0
+	left: 0
+	width: 100%
+	z-index: 10
+	&:not(._open-menu)
+		.menu-header
+			@media ($max1023)
+				display: none
+	&._open-menu
+		.header
+			&__logo
+				color: $white
+			&__request
+				.btn
+					color: $white
+			&__burger
+				color: $white
+				svg
+					&:first-child
+						display: none
+					&:last-child
+						display: block
+		.lang-header
+			&__trigger
+				color: $white
+	&__row
+		display: flex
+		align-items: center
+		padding-top: 24px
+		padding-bottom: 24px
+		@media ($max1023)
+			padding-top: 16px
+			padding-bottom: 16px
+		@media ($max767)
+			flex-wrap: wrap
+			justify-content: space-between
+
+	&__logo
+		z-index: 1
+		flex-shrink: 0
+		display: block
+		width: 122px
+		margin-right: 96px
+		@media ($max1279)
+			margin-right: 40px
+		@media ($max1023)
+			width: 92px
+		img,svg
+			width: 100%
+			height: 100%
+
+	&__actions
+		z-index: 1
+		display: flex
+		align-items: center
+		gap: 69px
+		margin-left: 69px
+		@media ($max1279)
+			gap: 40px
+			margin-left: 40px
+		@media ($max1023)
+			flex: 1 1 auto
+			justify-content: flex-end
+			gap: 69px
+		@media ($max767)
+			justify-content: space-between
+			width: 100%
+			order: 1
+			margin-top: 16px
+			margin-left: 0
+			gap: 12px
+		> div
+			line-height: 0
+
+	&__request
+
+	&__burger
+		z-index: 1
+		flex-shrink: 0
+		width: 24px
+		height: 24px
+		margin-left: 24px
+		@media ($min1024)
+			display: none
+		svg
+			width: 100%
+			height: 100%
+			&:last-child
+				display: none
+
+.menu-header
+	flex: 1 1 auto
+
+	@media ($max1023)
+		display: block
+		position: fixed
+		top: 0
+		left: 0
+		width: 100%
+		height: 100%
+		background-color: $black-2
+		color: $white
+		padding: 136px 40px 0
+		overflow-x: hidden
+		overflow-y: auto
+
+	@media ($max767)
+		padding: 119px 20px 0
+
+	&__wrapper
+		@media ($max1023)
+			display: flex
+			flex-direction: column
+			min-height: 100%
+			padding-bottom: 40px
+		@media ($max767)
+			padding-bottom: 24px
+
+	&__links
+		margin-top: auto
+		padding-top: 40px
+
+		@media ($max767)
+			padding-top: 24px
+		@media ($min1024)
+			display: none
+		ul
+			display: flex
+			justify-content: space-between
+			@media ($max767)
+				flex-wrap: wrap
+			li
+				@media ($max767)
+					padding: 8px 0
+				&:first-child
+					@media ($max767)
+						order: 1
+						width: 100%
+						padding-bottom: 0
+						border-top: solid 1px $black-4
+
+.nav-header
+	&__list
+		display: flex
+		gap: 32px
+		@media ($max1023)
+			flex-direction: column
+			gap: 8px
+
+	&__item
+		&:not(._open-submenu)
+			.sublist-header
+				@media ($min1024)
+					display: none
+		&._open-submenu
+			.nav-header__link
+				svg
+					transform: scaleY(-1)
+			.sublist-header
+				display: block
+		&:nth-child(2)
+			@media ($max1023)
+				&:before
+					content: 'Menu'
+					display: block
+					color: $grey
+					margin-top: 32px
+					margin-bottom: 8px
+
+	&__link
+		&:not(.btn)
+			@media ($max1023)
+				font-family: $ff-title
+				font-size: 64px
+				line-height: 1.1
+				font-weight: 500
+			@media ($max767)
+				font-size: 40px
+		&.btn
+			gap: 4px
+			@media ($max1023)
+				color: $grey
+				margin-bottom: 8px
+				pointer-events: none
+			svg
+				transition: transform $time-03
+				@media ($max1023)
+					display: none
+
+.sublist-header
+	display: block
+	@media ($min1024)
+		position: absolute
+		top: 100%
+		left: 0
+		width: 100%
+		background-color: $white
+		z-index: 1
+		padding: 40px 0
+		border-top: solid 1px $grey-2
+	.container
+		@media ($max1023)
+			padding-right: 0
+			padding-left: 0
+	.header__logo
+		@media ($max1023)
+			display: none
+
+	&__wrapper
+		display: flex
+		position: relative
+		&:after
+			content: ''
+			display: block
+			flex-shrink: 0
+			width: pct-s(410,1760)
+			margin-left: 30px
+			@media ($max1023)
+				display: none
+
+	&__col
+		flex: 1 1 auto
+
+	&__item
+		display: flex
+		margin-bottom: 24px
+		@media ($max1023)
+			margin-bottom: 8px
+		&:last-child
+			margin-bottom: 0
+
+	&__link
+		flex-shrink: 0
+		align-self: flex-start
+		width: 260px
+		margin-right: 40px
+		@media ($max1440)
+			width: 144px
+		@media ($max1023)
+			width: 100%
+			font-family: $ff-title
+			font-size: 64px
+			line-height: 1.1
+			font-weight: 500
+			color: $white
+			margin-right: 0
+		@media ($max767)
+			font-size: 40px
+
+	&__list
+		@media ($max1023)
+			display: none
+
+	&__list-item
+		margin-bottom: 8px
+		&:not(._open-last-lvl)
+			.sublist-header
+				&__block
+					display: none
+		&._open-last-lvl
+			.sublist-header
+				&__block
+					display: block
+				&__list-link
+					color: $red
+					text-decoration: underline
+		&:last-child
+			margin-bottom: 0
+	&__list-link
+		text-underline-offset: 6px
+	&__block
+		display: block
+		position: absolute
+		top: 0
+		right: 0
+		width: pct-s(410,1760)
+
+	&__img
+		display: block
+		img
+			width: 100%
+			height: 100%
+			object-fit: cover
+
+	&__row
+		display: flex
+		justify-content: space-between
+		gap: 16px
+		margin-top: 16px
+
+		> *:last-child
+			text-align: right
+
+.lang-header
+	position: relative
+	&__trigger
+
+	&__wrapper
+		position: absolute
+		top: 100%
+		left: 0
+
+		display: none
+
+	&__list

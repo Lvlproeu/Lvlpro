@@ -2,52 +2,27 @@
  * Fonts
 */
 
-// Inter-Regular 400
+// IBMPlexMono-Regular 400
 
 @font-face {
-    font-family: 'Inter';
+    font-family: 'IBMPlexMono';
+    src: url('./../fonts/IBMPlexMono-Regular.woff2') format('woff2'),
+		url('./../fonts/IBMPlexMono-Regular.woff') format('woff'),
+		url('./../fonts/IBMPlexMono-Regular.ttf') format('truetype');
     font-style: normal;
     font-weight: 400;
     font-display: swap;
-    src: url('./../fonts/Inter-Regular.otf') format('opentype');
 }
 
-// Inter-Medium 500
+
+// VelaSans-Medium 500
 
 @font-face {
-  font-family: 'Inter';
+  font-family: 'VelaSans';
+  src: url('./../fonts/VelaSans-Medium.woff2') format('woff2'),
+  url('./../fonts/VelaSans-Medium.woff') format('woff'),
+  url('./../fonts/VelaSans-Medium.ttf') format('truetype');
   font-style: normal;
   font-weight: 500;
   font-display: swap;
-  src: url('./../fonts/Inter-Medium.otf') format('opentype');
-}
-
-// Inter-SemiBold 600
-
-@font-face {
-  font-family: 'Inter';
-  font-style: normal;
-  font-weight: 600;
-  font-display: swap;
-  src: url('./../fonts/Inter-SemiBold.otf') format('opentype');
-}
-
-// Benzin-Medium 500
-
-@font-face {
-  font-family: 'Benzin';
-  font-style: normal;
-  font-weight: 500;
-  font-display: swap;
-  src: url('./../fonts/Benzin-Medium.ttf') format('truetype');
-}
-
-// Benzin-Bold 700
-
-@font-face {
-  font-family: 'Benzin';
-  font-style: normal;
-  font-weight: 700;
-  font-display: swap;
-  src: url('./../fonts/Benzin-Bold.ttf') format('truetype');
 }

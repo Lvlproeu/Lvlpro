@@ -3,27 +3,25 @@
 */
 
 /* Breakpoints */
-$max374: 'max-width: 374px';
-$max479: 'max-width: 479px';
-$min480: 'min-width: 480px';
-$max574: 'max-width: 574px';
-$min575: 'min-width: 575px';
 $max767: 'max-width: 767px';
 $min768: 'min-width: 768px';
 $max1023: 'max-width: 1023px';
 $min1024: 'min-width: 1024px';
-$max1279: 'max-width: 1279px';
-$min1280: 'min-width: 1280px';
-$max1439: 'max-width: 1439px';
-$min1440: 'min-width: 1440px';
-$max1919: 'max-width: 1919px';
-$min1920: 'min-width: 1920px';
+$max1440: 'max-width: 1440px';
+$min1441: 'min-width: 1441px';
 $hover: 'any-hover: hover';
 
 // Fonts
-$fi: 'Inter', sans-serif;
-$fb: 'Benzin', sans-serif;
+$ff-default: 'IBMPlexMono', sans-serif;
+$ff-title: 'VelaSans', sans-serif;
 
 /* Colour palette */
 $black: #000;
+$black-2: #222222;
+$black-3: #333333;
+$black-4: #444444;
+$grey: #8A8A8A;
+$grey-2: #DADADA;
+$grey-3: #F1F1F1;
 $white: #fff;
+$red: #E23232;

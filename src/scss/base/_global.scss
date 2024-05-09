@@ -1,22 +1,20 @@
 body {
 	color: $black;
-	font-family: $fi;
-	font-size: 16px;
-	line-height: 150%;
+	background: $white;
+	font-family: $ff-default;
+	font-size: 20px;
+	line-height: 1.4;
 	font-weight: 400;
+	letter-spacing: -0.04em;
 	overflow-x: hidden;
 	overflow-y: auto;
-	background: $white;
-	@media ($max767) {
-		font-size: 14px;
+
+	@media ($max1440) {
+		font-size: 16px;
 	}
-	&._lock{
+
+	&._lock {
 		overflow: hidden;
-		.header-main {
-			@media ($min1024) {
-				padding-right: 21px;
-			}
-		}
 	}
 }
 .wrapper {
@@ -26,11 +24,19 @@ body {
 	min-height: 100%;
 	overflow-x: hidden;
 }
-.container{
-	max-width: 1248px;
+.container {
 	width: 100%;
-	padding-right: 16px;
-	padding-left: 16px;
+	max-width: 1920px;
+	padding-right: 80px;
+	padding-left: 80px;
 	margin-right: auto;
 	margin-left: auto;
+	@media ($max1440) {
+		padding-right: 40px;
+		padding-left: 40px;
+	}
+	@media ($max1023) {
+		padding-right: 20px;
+		padding-left: 20px;
+	}
 }

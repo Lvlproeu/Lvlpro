@@ -89,12 +89,46 @@
 .c-red
     color: $red
 
+.link-grey
+    color: $grey
+    transition: color $time-03
+    @media ($hover)
+        &:hover
+            color: $white
+
 .btn
     display: inline-flex
     align-items: center
     justify-content: center
     gap: 8px
+    transition: all $time-03
+    &--hover-red
+        @media ($hover)
+            &:hover
+                color: $red
     img,svg
         flex-shrink: 0
         width: 24px
         height: 24px
+        @media ($max1440)
+            width: 20px
+            height: 20px
+
+.hover-line
+    position: relative
+    @media ($hover)
+        &:hover
+            &:after
+                transform: none
+                opacity: 1
+    &:after
+        content: ''
+        position: absolute
+        bottom: 0
+        left: 0
+        width: 100%
+        border-top: solid 1px currentColor
+        opacity: 0
+        transform: scaleX(0)
+        transform-origin: left
+        transition: transform $time-03, opacity $time-03

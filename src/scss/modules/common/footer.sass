@@ -1,0 +1,60 @@
+.footer
+    background-color: $black
+    color: $white
+    &__section
+        padding: 40px 0
+        border-top: solid 1px $black-3
+        @media ($max1023)
+            padding: 32px 0
+        @media ($max767)
+            padding: 24px 0
+        &:last-child
+            @media ($max1023)
+                padding-bottom: 40px
+            @media ($min1024)
+                padding-top: 80px
+    &__row
+        display: flex
+        flex-wrap: wrap
+        margin: -10px
+        @media ($max767)
+            margin: -12px
+    &__col
+        width: 25%
+        padding: 10px
+        @media ($max1023)
+            width: 33.333%
+        @media ($max767)
+            width: 100%
+            padding: 12px
+        &._logo
+            @media ($max1023)
+                width: 100%
+                margin-bottom: 12px
+            @media ($max767)
+                margin-bottom: 0
+        &._creator
+            @media ($max1023)
+                width: 100%
+    &__logo
+        display: block
+        width: 152px
+        height: 40px
+        @media ($max1023)
+            width: 92px
+            height: 24px
+        svg
+            width: 100%
+            height: 100%
+    &__subtitle
+        margin-bottom: 16px
+        @media ($max1440)
+            margin-bottom: 8px
+
+    &__list
+        li
+            margin-bottom: 16px
+            @media ($max1440)
+                margin-bottom: 8px
+            &:last-child
+                margin-bottom: 0

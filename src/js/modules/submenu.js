@@ -1,3 +1,6 @@
+/**
+ * Подменю в хедере
+ */
 export default class Submenu {
 	constructor(selector) {
 		if (!selector) {
@@ -5,7 +8,6 @@ export default class Submenu {
 		}
 
 		this.container = selector;
-		this.container.instanceSubmenu = this;
 
 		this.data = {
 			submenuSelector: '.js-submenu',
@@ -18,6 +20,7 @@ export default class Submenu {
 		this.triggersLastLvl = this.container.querySelectorAll(
 			'.js-trigger-last-lvl'
 		);
+		
 
 		this.wrapper = null;
 		this.wrapperLastLvl = null;
@@ -27,6 +30,7 @@ export default class Submenu {
 
 	init() {
 		this.bind();
+
 		this.addListenerTriggerClick();
 		this.addListenerMouseEnter();
 	}
@@ -54,10 +58,12 @@ export default class Submenu {
 
 		if (this.wrapper && !this.isSubmenuOpen) {
 			this.wrapper.classList.remove(this.data.openSubmenu);
+			this.container.classList.remove(this.data.openSubmenu);
 		}
 
 		this.wrapper = target.closest(this.data.submenuSelector);
 		this.wrapper.classList.toggle(this.data.openSubmenu);
+		this.container.classList.toggle(this.data.openSubmenu);
 
 		if (!this.isSubmenuOpen) {
 			this.closeLastLvl();
@@ -80,6 +86,7 @@ export default class Submenu {
 	closeSubmenu() {
 		if (this.wrapper) {
 			this.wrapper.classList.remove(this.data.openSubmenu);
+			this.container.classList.remove(this.data.openSubmenu);
             this.wrapper = null;
 		}
 		this.closeLastLvl();
@@ -93,10 +100,10 @@ export default class Submenu {
 	}
 
 	get isSubmenuOpen() {
-		return this.wrapper.classList.contains(this.data.openSubmenu);
+		return this.wrapper && this.wrapper.classList.contains(this.data.openSubmenu);
 	}
 
 	get isLastLvlOpen() {
-		return this.wrapperLastLvl.classList.contains(this.data.openLastLvl);
+		return this.wrapperLastLvl && this.wrapperLastLvl.classList.contains(this.data.openLastLvl);
 	}
 }

@@ -1,4 +1,8 @@
 .form
+    &._sending
+        > *
+            opacity: 0.5
+            pointer-events: none
     &__col
         margin-bottom: 40px
         @media ($max1440)
@@ -102,3 +106,15 @@
         a
             display: inline
             color: $red
+
+
+.form-request-body
+    display: flex
+    flex-direction: column
+    justify-content: center
+    align-items: center
+    text-align: center
+    width: 100%
+    max-width: 530px
+    min-height: 100%
+    margin: 0 auto

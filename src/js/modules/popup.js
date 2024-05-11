@@ -31,9 +31,11 @@ export default class Popup {
 
 	init() {
 		this.bind();
+
+		this.anim = new AnimationsPopup(this.selector);
+
 		this.addListenerTriggerClick();
 		this.addListenerPopupClick();
-		this.anim = new AnimationsPopup(this.selector);
 		this.checkOpenDefault();
 	}
 
@@ -90,6 +92,13 @@ export default class Popup {
 	closeCurrent() {
 		this.selector.classList.remove(this.data.open);
 		bodyLock.unlock();
+	}
+
+	setStepsAfterRequest() {
+		this.anim.elements = this.selector.querySelectorAll(
+			'[data-anim-step-after-request]'
+		);
+		this.anim.index = this.anim.elements.length;
 	}
 
 	static open(name) {

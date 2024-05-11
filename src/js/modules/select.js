@@ -34,6 +34,15 @@ export default class Select {
 			},
 		});
 	}
+
+	clear() {
+		this.slim.setSelected();
+		if (this.selector.instanceField) {
+			setTimeout(() => {
+				this.selector.instanceField.removeError();
+			}, 100);
+		}
+	}
 }
 
 export function initSelects() {

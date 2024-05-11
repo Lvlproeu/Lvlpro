@@ -1,5 +1,5 @@
 <div data-popup="feedback" class="popup popup--side">
-    <form action="#" data-anim-step="0" class="popup__wrapper form">
+    <form action="#" data-anim-step="0" class="popup__wrapper form js-form">
         <div class="popup__head">
             <div>
                 <div data-anim-step="1" class="popup__title title fs-70 fs-32-mob">Boost your project</div>
@@ -17,7 +17,7 @@
                     <div class="form__subtitle title fs-24 fs-24-mob">Task</div>
                     <div class="form__item">
                         <div class="field">
-                            <input type="text" class="field__input" placeholder="Describe the task in a free form">
+                            <input type="text" class="field__input" placeholder="Describe the task in a free form" data-required="text">
                             <span class="field__error">error</span>
                         </div>
                     </div>
@@ -26,7 +26,7 @@
                     <div class="form__subtitle title fs-24 fs-24-mob">Budget</div>
                     <div class="form__item">
                         <div class="field">
-                            <select class="select js-select">
+                            <select class="select js-select" data-required="select">
                                 <option data-placeholder="true">Select your budget</option>
                                 <option value="1">Budget1</option>
                                 <option value="2">Budget2</option>
@@ -43,42 +43,46 @@
                     <div class="form__subtitle title fs-24 fs-24-mob">Contacts</div>
                     <div class="form__item">
                         <div class="field">
-                            <input type="text" class="field__input" placeholder="Name">
+                            <input type="text" class="field__input" placeholder="Name" data-required="text">
                             <span class="field__error">error</span>
                         </div>
                     </div>
                     <div class="form__item">
                         <div class="field">
-                            <input type="text" class="field__input" placeholder="Company">
+                            <input type="text" class="field__input" placeholder="Company" data-required="text">
                             <span class="field__error">error</span>
                         </div>
                     </div>
                     <div class="form__item">
                         <div class="field">
-                            <input type="text" class="field__input" placeholder="Phone number">
+                            <input type="text" class="field__input" placeholder="Phone number" data-required="tel">
                             <span class="field__error">error</span>
                         </div>
                     </div>
                     <div class="form__item">
                         <div class="field">
-                            <input type="text" class="field__input" placeholder="Email">
+                            <input type="text" class="field__input" placeholder="Email" data-required="email">
                             <span class="field__error">error</span>
                         </div>
                     </div>
                 </div>
                 <div class="form__col">
                     <div class="form__item">
-                        <label class="checkbox">
-                            <input type="checkbox" class="checkbox__input">
-                            <span class="checkbox__body">
-                                <svg width="10" height="9" viewBox="0 0 10 9" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                    <path d="M1.25 4.75L3.5 7L8.75 1.75" stroke="currentColor" stroke-width="1.5" stroke-linecap="square"/>
-                                </svg>
-                            </span>
-                            <span class="checkbox__text">
-                                I agree to the <a href="#" class="hover-line">processing of personal data</a>
-                            </span>
-                        </label>
+                        <div class="field">
+                            <label class="checkbox">
+                                <input type="checkbox" class="checkbox__input" data-required="checkbox">
+                                <span class="checkbox__body">
+                                    <svg width="10" height="9" viewBox="0 0 10 9" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <path d="M1.25 4.75L3.5 7L8.75 1.75" stroke="currentColor" stroke-width="1.5" stroke-linecap="square"/>
+                                    </svg>
+                                </span>
+                                <span class="checkbox__text">
+                                    I agree to the <a href="#" class="hover-line">processing of personal data</a>
+                                </span>
+                            </label>
+                            <span class="field__error">error</span>
+                        </div>
+
                     </div>
                 </div>
             </div>
@@ -92,4 +96,22 @@
             </button>
         </div>
     </form>
+    <div data-anim-step="0" data-anim-step-after-request class="popup__wrapper _playing js-form-after-request" style="display: none;">
+        <div class="popup__body popup__scroll-container">
+            <div class="form-request-body">
+                <div>
+                    <div data-anim-step="1" data-anim-step-after-request class="title fs-70 fs-32-mob _playing">Failed to submit application</div>
+                    <div data-anim-step="2" data-anim-step-after-request class="popup__text c-grey _playing">Reload the page or try submitting the form later. We are already working to fix the error</div>
+                </div>
+                <div data-anim-step="3" data-anim-step-after-request class="popup__bottom _playing">
+                    <button type="button" data-popup-close class="btn c-red">
+                        <svg width="21" height="21" viewBox="0 0 21 21" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M16.125 4.875L4.875 16.125M16.125 16.125L4.875 4.875" stroke="#E23232" stroke-width="1.5" stroke-linecap="square"/>
+                            </svg>
+                            Close
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
 </div>

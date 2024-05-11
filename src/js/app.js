@@ -1,5 +1,6 @@
 import '../scss/app.scss';
 import { initBodyLock } from './modules/bodyLock';
+import { initForms } from './modules/form';
 
 import { initHeader } from './modules/header';
 import { initMarquee } from './modules/marquee';
@@ -12,6 +13,7 @@ function initModules() {
 	initMarquee();
 	initSelects();
 	initPopups();
+	initForms();
 
 	document.body.classList.add('_loaded');
 }

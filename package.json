@@ -89,6 +89,7 @@
 	"target": "web",
 	"dependencies": {
 		"@fancyapps/ui": "^5.0.16",
+		"axios": "^1.6.8",
 		"slim-select": "^2.7.1",
 		"swiper": "^8.4.5"
 	}

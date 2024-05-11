@@ -7,8 +7,14 @@ export default class AnimationsPopup {
 			return;
 		}
 
+		this.data = {
+			playing: '_playing',
+		};
+
 		this.container = selector;
-		this.elements = this.container.querySelectorAll('[data-anim-step]');
+		this.elements = this.container.querySelectorAll(
+			'[data-anim-step]:not([data-anim-step-after-request]'
+		);
 		this.index = 0;
 
 		this.play = false;
@@ -22,7 +28,7 @@ export default class AnimationsPopup {
 			const time = AnimationsPopup.timeInMs(
 				window.getComputedStyle(current).transitionDuration
 			);
-			current.classList.add('_playing');
+			current.classList.add(this.data.playing);
 			this.index += 1;
 
 			setTimeout(() => {
@@ -46,7 +52,7 @@ export default class AnimationsPopup {
 			const time = AnimationsPopup.timeInMs(
 				window.getComputedStyle(current).transitionDuration
 			);
-			current.classList.remove('_playing');
+			current.classList.remove(this.data.playing);
 			this.index -= 1;
 
 			setTimeout(() => {
@@ -64,7 +70,7 @@ export default class AnimationsPopup {
 
 	clear() {
 		for (const el of this.elements) {
-			el.classList.remove('_playing');
+			el.classList.remove(this.data.playing);
 		}
 	}
 

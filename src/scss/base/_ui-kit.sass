@@ -70,6 +70,13 @@
         @media ($max767)
             font-size: 100px
 
+    &-32-mob
+        @media ($max767)
+            font-size: 32px
+    &-24-mob
+        @media ($max767)
+            font-size: 24px
+
 .c-black
     color: $black
 .c-black-2
@@ -102,6 +109,17 @@
     justify-content: center
     gap: 8px
     transition: all $time-03
+    &--full-width
+        width: 100%
+    &--red
+        height: 56px
+        padding: 0 16px
+        background-color: $red
+        color: $white
+        font-size: 20px
+        @media ($hover)
+            &:hover
+                background-color: $black
     &--hover-red
         @media ($hover)
             &:hover

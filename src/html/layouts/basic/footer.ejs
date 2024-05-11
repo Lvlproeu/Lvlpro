@@ -1,3 +1,6 @@
+<% 
+const popupFeedback = require('../../components/popup-feedback.ejs');
+%> 
     <footer class="footer">
         <div class="marquee-wrapper title fs-160 c-white">
             <button type="button" class="marquee__link"></button>
@@ -112,5 +115,8 @@
         </div>
     </footer>
 </div>
+
+<%- popupFeedback()-%>
+
 </body>
 </html>

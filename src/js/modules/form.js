@@ -118,7 +118,7 @@ export default class Form {
 				})
 				.finally(function () {
 					THIS.container.classList.remove(THIS.data.sending);
-					THIS.btnSubmit.removeAttribute('disabled', true);
+					THIS.btnSubmit.removeAttribute('disabled');
 					THIS.resetForm();
 					THIS.showContainerResponse();
 				});

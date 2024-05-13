@@ -3,6 +3,7 @@ import { initBodyLock } from './modules/bodyLock';
 import { initForms } from './modules/form';
 
 import { initHeader } from './modules/header';
+import { initPhoneMasks } from './modules/inputMask';
 import { initMarquee } from './modules/marquee';
 import { initPopups } from './modules/popup';
 import { initSelects } from './modules/select';
@@ -14,6 +15,7 @@ function initModules() {
 	initSelects();
 	initPopups();
 	initForms();
+	initPhoneMasks();
 
 	document.body.classList.add('_loaded');
 }

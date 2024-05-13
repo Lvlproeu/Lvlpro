@@ -1,115 +1,135 @@
-import axios from "axios";
-import Field from "./field";
+import axios from 'axios';
+import Field from './field';
 
+/**
+ * Формы
+ */
 export default class Form {
-    constructor(selector) {
-        if (!selector || selector.instanceForm) {
-            return;
-        }
+	constructor(selector) {
+		if (!selector || selector.instanceForm) {
+			return;
+		}
 
-        this.data = {
-            sending: '_sending',
-            containerAfterRequest: '.js-form-after-request',
-        }
+		this.data = {
+			sending: '_sending',
+			containerResponse: '.js-form-after-request',
+		};
 
-        this.container = selector;
-        this.container.instanceForm = this;
-        this.popup = this.container.closest('[data-popup]');
+		this.container = selector;
+		this.container.instanceForm = this;
+		this.btnSubmit = this.container.querySelector('[type="submit"]');
+		this.popup = this.container.closest('[data-popup]');
+		this.containerResponse = this.container.parentNode.querySelector(
+			this.data.containerResponse
+		);
 
-        if (this.popup) {
-            this.containerAfterRequest = this.popup.querySelector(this.data.containerAfterRequest);
-        }
+		this.fields = [];
 
-        this.fields = [];
+		this.init();
+	}
 
+	init() {
+		this.bind();
+		this.initFields();
+		this.addListenerSubmit();
+	}
 
-        this.init();
-        
-    }
+	bind() {
+		this.onSubmit = this.onSubmit.bind(this);
+	}
 
-    init() {
-        this.bind();
-        this.initFields();
-        this.addListenerSubmit();
-    }
+	initFields() {
+		const selectors = this.container.querySelectorAll('[data-required');
 
-    bind() {
-        this.onSubmit = this.onSubmit.bind(this);
-    }
+		for (const el of selectors) {
+			this.fields.push(new Field(el));
+		}
+	}
 
-    addListenerSubmit() {
-        this.container.addEventListener('submit', this.onSubmit);
-    }
+	addListenerSubmit() {
+		this.container.addEventListener('submit', this.onSubmit);
+	}
 
-    validationForm() {
+	validationForm() {
 		return this.fields.reduce((accumulator, field) => {
 			const resultValiudation = field.validation();
 			return accumulator ? resultValiudation : false;
 		}, true);
 	}
 
-    onSubmit(e) {
-        e.preventDefault();
-        const THIS = this;
-        const formData = new FormData(this.container);
-        const url = this.container.getAttribute('action');
-        const btnSubmit = this.container.querySelector('[type="submit"');
-        
-        if (this.validationForm()) {
-            this.container.classList.add(this.data.sending);
-            btnSubmit.setAttribute('disabled', true);
+	resetForm() {
+		this.container.reset();
 
-            axios
-                .post(url, formData)
-                .then(function(response) {
-                    if (response) {
-                        console.log('ok');
-                    }
-                })
-                .catch(function(error) {
-                    console.log(error);
-                })
-                .finally(function() {
-                    THIS.container.classList.remove(THIS.data.sending);
-                    THIS.resetForm();
-                    THIS.checkPopup();
-                    btnSubmit.removeAttribute('disabled', true);
-                })
-        }
-    }
+		const selectors = this.container.querySelectorAll('select.js-select');
 
-    initFields() {
-        const selectors = this.container.querySelectorAll('[data-required');
-        
-        for (const el of selectors) {
-            this.fields.push(new Field(el));
-        }
-    }
+		for (const el of selectors) {
+			el.instanceSelect.clear();
+		}
+	}
 
-    resetForm() {
-        this.container.reset();
+	showContainerResponse() {
+		this.container.style.display = 'none';
+		this.containerResponse.style.display = '';
 
-        const selectors = this.container.querySelectorAll('select.js-select');
+		if (this.popup) {
+			this.popup.instancePopup.setStepsAfterRequest();
+		}
+	}
 
-        for (const el of selectors) {
-            el.instanceSelect.clear();
-        }
+	onSubmit(e) {
+		e.preventDefault();
 
-    }
+		const valid = this.validationForm();
 
-    checkPopup() {
-        if (this.popup) {
-            this.container.style.display = 'none';
-            this.containerAfterRequest.style.display = '';
-            this.popup.instancePopup.setStepsAfterRequest();
-        }
-    }
+		if (valid) {
+			const THIS = this;
+			const formData = new FormData(this.container);
+			const url = this.container.getAttribute('action');
+			const titleResponse = this.containerResponse.querySelector(
+				'[data-response-title]'
+			);
+			const textResponse = this.containerResponse.querySelector(
+				'[data-response-text]'
+			);
+
+			this.container.classList.add(this.data.sending);
+			this.btnSubmit.setAttribute('disabled', true);
+
+			axios
+				.post(url, formData)
+				.then(function (response) {
+					if (response) {
+						console.log('ok', response);
+
+						if (titleResponse) {
+							// TODO: сейчас запрос на тестовый jsonplaceholder, он возвращает успех 201
+							// когда будут реальные данные, поменять вывод текста из response.data.id на актуальный путь хранения текста заголовка
+							titleResponse.innerHTML = response.data.id;
+						}
+						if (textResponse) {
+							// TODO: сейчас запрос на тестовый jsonplaceholder, он возвращает успех 201
+							//  когда будут реальные данные, поменять вывод текста из response.data.id на актуальный путь хранения текста подзаголовка
+							textResponse.innerHTML = response.data.id;
+						}
+					}
+				})
+				.catch(function (error) {
+					console.log(error);
+				})
+				.finally(function () {
+					THIS.container.classList.remove(THIS.data.sending);
+					THIS.btnSubmit.removeAttribute('disabled', true);
+					THIS.resetForm();
+					THIS.showContainerResponse();
+				});
+		}
+	}
 }
 
 export function initForms() {
-    const selectors = document.querySelectorAll('.js-form');
+	const selectors = document.querySelectorAll('.js-form');
 
-    for (const el of selectors) {
-        new Form(el);
-    }
+	for (const el of selectors) {
+		new Form(el);
+	}
 }

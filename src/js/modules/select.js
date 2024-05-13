@@ -1,5 +1,8 @@
 import SlimSelect from 'slim-select';
 
+/**
+ * Селект
+ */
 export default class Select {
 	constructor(selector) {
 		if (!selector || selector.instanceSelect) {
@@ -23,12 +26,6 @@ export default class Select {
 
 		this.slim = new SlimSelect({
 			select: el,
-			events: {
-				afterChange() {
-					const customEvent = new Event('change', { bubbles: true });
-					el.dispatchEvent(customEvent);
-				},
-			},
 			settings: {
 				showSearch: false,
 			},
@@ -37,10 +34,9 @@ export default class Select {
 
 	clear() {
 		this.slim.setSelected();
+
 		if (this.selector.instanceField) {
-			setTimeout(() => {
-				this.selector.instanceField.removeError();
-			}, 100);
+			this.selector.instanceField.removeError();
 		}
 	}
 }

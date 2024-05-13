@@ -1,5 +1,5 @@
 <div data-popup="feedback" class="popup popup--side">
-    <form action="#" data-anim-step="0" class="popup__wrapper form js-form">
+    <form action="https://jsonplaceholder.typicode.com/posts" data-anim-step="0" class="popup__wrapper form js-form">
         <div class="popup__head">
             <div>
                 <div data-anim-step="1" class="popup__title title fs-70 fs-32-mob">Boost your project</div>
@@ -18,7 +18,7 @@
                     <div class="form__item">
                         <div class="field">
                             <input type="text" class="field__input" placeholder="Describe the task in a free form" data-required="text">
-                            <span class="field__error">error</span>
+                            <span class="field__error">error Task</span>
                         </div>
                     </div>
                 </div>
@@ -35,7 +35,7 @@
                                 <option value="5">Budget5</option>
                                 <option value="6">Budget6</option>
                             </select>
-                            <span class="field__error">error</span>
+                            <span class="field__error">error Budget</span>
                         </div>
                     </div>
                 </div>
@@ -44,25 +44,25 @@
                     <div class="form__item">
                         <div class="field">
                             <input type="text" class="field__input" placeholder="Name" data-required="text">
-                            <span class="field__error">error</span>
+                            <span class="field__error">error Name</span>
                         </div>
                     </div>
                     <div class="form__item">
                         <div class="field">
                             <input type="text" class="field__input" placeholder="Company" data-required="text">
-                            <span class="field__error">error</span>
+                            <span class="field__error">error Company</span>
                         </div>
                     </div>
                     <div class="form__item">
                         <div class="field">
-                            <input type="text" class="field__input" placeholder="Phone number" data-required="tel">
-                            <span class="field__error">error</span>
+                            <input type="text" class="field__input js-mask-phone" placeholder="Phone number" data-mask="+7 (000) 000 00 00" data-required="tel">
+                            <span class="field__error">error Phone number</span>
                         </div>
                     </div>
                     <div class="form__item">
                         <div class="field">
                             <input type="text" class="field__input" placeholder="Email" data-required="email">
-                            <span class="field__error">error</span>
+                            <span class="field__error">error Email</span>
                         </div>
                     </div>
                 </div>
@@ -80,7 +80,7 @@
                                     I agree to the <a href="#" class="hover-line">processing of personal data</a>
                                 </span>
                             </label>
-                            <span class="field__error">error</span>
+                            <span class="field__error">error Agreement</span>
                         </div>
 
                     </div>
@@ -100,8 +100,8 @@
         <div class="popup__body popup__scroll-container">
             <div class="form-request-body">
                 <div>
-                    <div data-anim-step="1" data-anim-step-after-request class="title fs-70 fs-32-mob _playing">Failed to submit application</div>
-                    <div data-anim-step="2" data-anim-step-after-request class="popup__text c-grey _playing">Reload the page or try submitting the form later. We are already working to fix the error</div>
+                    <div data-anim-step="1" data-anim-step-after-request data-response-title class="title fs-70 fs-32-mob _playing">Failed to submit application</div>
+                    <div data-anim-step="2" data-anim-step-after-request data-response-text class="popup__text c-grey _playing">Reload the page or try submitting the form later. We are already working to fix the error</div>
                 </div>
                 <div data-anim-step="3" data-anim-step-after-request class="popup__bottom _playing">
                     <button type="button" data-popup-close class="btn c-red">

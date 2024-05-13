@@ -122,6 +122,9 @@
         @media ($hover)
             &:hover
                 background-color: $black
+        &:focus-visible
+            &:not([disabled])
+                background-color: $black
     &--hover-red
         @media ($hover)
             &:hover

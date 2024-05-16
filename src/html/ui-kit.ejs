@@ -1,8 +1,10 @@
 <%
+const preloader = require('./components/preloader.ejs');
 const headerBlack = require('./layouts/basic/header-black.ejs');
 const footer = require('./layouts/basic/footer.ejs'); 
 %> 
 <%- headerBlack()-%>
+<%- preloader()-%>
 <main class="page">
     <div class="container">
         <div class="title fs-hyper">title fs-hyper</div>

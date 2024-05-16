@@ -1,4 +1,8 @@
 .form
+    &._sending
+        > *
+            opacity: 0.5
+            pointer-events: none
     &__col
         margin-bottom: 40px
         @media ($max1440)
@@ -20,10 +24,16 @@
 
 .field
     display: block
+    position: relative
+    margin-bottom: 24px
+    @media ($max767)
+        margin-bottom: 16px
     &:not(._error)
         .field
             &__error
-                display: none
+                transform: translateY(-10px)
+                opacity: 0
+                pointer-events: none
     &._error
         .field
             &__input
@@ -49,7 +59,7 @@
             opacity: 0.5
         &::placeholder
             color: $grey
-        &:focus
+        &:focus-visible
             &:not([disabled])
                 border-color: $red
         @media ($hover)
@@ -57,12 +67,19 @@
                 &:not([disabled])
                     border-color: $red
     &__error
-        display: block
+        position: absolute
+        top: 100%
+        left: 0
+        width: 100%
         color: $red
         font-size: 14px
         text-transform: uppercase
         text-align: right
         margin-top: 4px
+        transition: all $time-03
+        @media ($max767)
+            font-size: 12px
+            margin-top: 0
 
 .checkbox
     display: inline-flex
@@ -102,3 +119,20 @@
         a
             display: inline
             color: $red
+            &:focus-visible
+                &:after
+                    transform: none
+                    opacity: 1
+                    
+
+
+.form-request-body
+    display: flex
+    flex-direction: column
+    justify-content: center
+    align-items: center
+    text-align: center
+    width: 100%
+    max-width: 530px
+    min-height: 100%
+    margin: 0 auto

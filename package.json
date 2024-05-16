@@ -92,6 +92,8 @@
 		"gsap": "^3.12.5",
 		"plugins": "^0.4.2",
 		"scrollmagic": "^2.0.8",
+		"axios": "^1.6.8",
+		"imask": "^7.6.0",
 		"slim-select": "^2.7.1",
 		"swiper": "^8.4.5"
 	}

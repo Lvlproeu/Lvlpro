@@ -15,6 +15,12 @@ body {
 		overflow: hidden;
 		touch-action: none;
 	}
+
+	&._hide-loader {
+		.preloader{
+			display: none;
+		}
+	}
 }
 .wrapper {
 	display: flex;

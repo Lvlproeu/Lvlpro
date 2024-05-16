@@ -1,0 +1,142 @@
+<style>
+    .preloader{
+        --time-03: 0.3s;
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        z-index: 999;
+        background: #000000;
+        color: #8A8A8A;
+        letter-spacing: -0.04em;
+        line-height: 1.4;
+        transition: transform var(--time-03);
+    }
+    .preloader._hide{
+        transform: translateY(-100%);
+        transition-delay: var(--time-03);
+    }
+    .preloader._hide .preloader__overlay{
+        transform: none;
+    }
+    .preloader__overlay{
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: #222222;
+        transform: translateY(100%);
+        transition: transform var(--time-03);
+    }
+    .preloader__wrapper{
+        min-height: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 80px
+    }
+    .preloader__body{
+        width: 100%;
+    }
+    .preloader__row{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 40px;
+    }
+    .preloader__line-wrapper{
+        flex-shrink: 0;
+        position: relative;
+        width: 140px;
+        height: 2px;
+        margin: 0 16px;
+        background-color: #8A8A8A;
+    }
+    .preloader__line{
+        position: absolute;
+        height: 100%;
+        background-color: #fff;
+    }
+    .preloader__text{
+        position: absolute;
+        align-self: flex-end;
+        text-align: center;
+        max-width: 331px;
+        font-size: 20px;
+    }
+
+    @media (max-width: 1440px) {
+        .preloader__wrapper{
+            padding: 40px 20px;
+        }
+        .preloader__row{
+            font-size: 32px;
+        }
+        .preloader__text{
+            max-width: 261px;
+            font-size: 16px;
+        }
+    }
+    @media (max-width: 767px) {
+        .preloader__row{
+            font-size: 24px;
+        }
+        .preloader__line-wrapper{
+            width: 100%;
+            flex: 1 1 auto;
+            margin: 0 8px;
+        }
+    }
+</style>
+
+<div class="preloader js-preloader">
+    <div class="preloader__wrapper">
+        <div class="preloader__body">
+            <div class="preloader__row">
+                <div>Level</div>
+                <div class="preloader__line-wrapper">
+                    <div class="preloader__line js-preloader-line" style="width: 0%; transition: width 2s linear;"></div>
+                </div>
+                <div>Pro</div>
+            </div>
+        </div>
+        <div class="preloader__text">Full cycle agency that turns vision into income</div>
+    </div>
+    <div class="preloader__overlay"></div>
+</div>
+
+<script>
+    document.body.classList.add('_lock');
+    const preloader = document.querySelector('.js-preloader');
+    const preloaderLine = preloader.querySelector('.js-preloader-line');
+    setTimeout(() => {
+        preloaderLine.style.width = '80%';
+    }, 100);
+
+    hidePreloader = (e) => {
+        e.preventDefault();
+        e.stopPropagation();
+        const interval = setInterval(() => {
+            if (document.body.classList.contains('_loaded')) {
+                clearInterval(interval);
+                preloaderLine.removeEventListener('transitionend', hidePreloader)
+                preloaderLine.style.transitionDuration = '0.1s';
+                preloaderLine.style.width = '100%';
+                preloader.classList.add('_hide');
+            }
+        }, 100);
+    }
+
+    preloaderLine.addEventListener('transitionend', hidePreloader);
+
+    preloader.addEventListener('transitionend', (e) => {
+        e.preventDefault();
+        e.stopPropagation();
+        if (e.target.classList.contains('js-preloader')) {
+            document.body.classList.remove('_lock');
+            document.body.classList.add('_hide-loader');
+        }
+    })
+</script>

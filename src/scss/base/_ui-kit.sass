@@ -109,6 +109,8 @@
     justify-content: center
     gap: 8px
     transition: all $time-03
+    &[disabled]
+        opacity: 0.5
     &--full-width
         width: 100%
     &--red
@@ -119,6 +121,9 @@
         font-size: 20px
         @media ($hover)
             &:hover
+                background-color: $black
+        &:focus-visible
+            &:not([disabled])
                 background-color: $black
     &--hover-red
         @media ($hover)

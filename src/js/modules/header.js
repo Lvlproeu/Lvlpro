@@ -16,6 +16,7 @@ export default class Header {
 
 		this.data = {
 			headerSelector: '.js-header',
+			popupSelector: '[data-popup-trigger]',
 			clearTransitions: '_clear-transitions',
 			point: '1023',
 		};
@@ -99,7 +100,10 @@ export default class Header {
 	}
 
 	isClickOutside(target) {
-		return !target.closest(this.data.headerSelector);
+		return (
+			!target.closest(this.data.headerSelector) ||
+			target.closest(this.data.popupSelector)
+		);
 	}
 }
 

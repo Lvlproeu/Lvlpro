@@ -5,6 +5,7 @@ import { initHeader } from './modules/header';
 import { initMarquee } from './modules/marquee';
 import { initPopups } from './modules/popup';
 import { initSelects } from './modules/select';
+import './modules/animationsScroll'
 
 function initModules() {
 	initBodyLock();

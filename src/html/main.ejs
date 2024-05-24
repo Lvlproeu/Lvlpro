@@ -1,16 +1,174 @@
 <%
 const headerWhite = require('./layouts/basic/header-white.ejs');
-const footer = require('./layouts/basic/footer.ejs'); 
+const footer = require('./layouts/basic/footer.ejs');
+
 %>
 
 <%- headerWhite()-%>
 <main class="page">
-<!--    <section class="section section1">-->
-<!--        <h2>ONE</h2>-->
-<!--    </section>-->
-<!--    <section class="section section1">-->
-<!--        <h2>TWO</h2>-->
-<!--    </section>-->
+    <section class="section">
+        <div class="main-screen layout">
+            <div class="main-screen__bg">
+                <video preload="metadata" muted loop playsinline autoplay src="videos/showreel_website_main.mp4"></video>
+            </div>
+            <div class="container">
+                <div class="main-screen__body">
+                    <div class="main-screen__row">
+                        <div class="main-screen__title">
+                            <div class="fs-160 title">We create</div>
+                            <div class="fs-20 main-screen__desc">Full cycle agency that turns vision into income</div>
+                        </div>
+                        <div class="swiper fs-160 title js-titles-slider main-screen__slider">
+                            <div class="swiper-wrapper">
+                                <div class="swiper-slide">
+                                    video production
+                                </div>
+                                <div class="swiper-slide">
+                                    UX/UI design
+                                </div>
+                                <div class="swiper-slide">
+                                    development
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="main-screen__scroll fs-20 c-grey-2">Scroll down</div>
+                </div>
+
+            </div>
+
+
+        </div>
+    </section>
+    <section class="section">
+        <div class="info-screen layout">
+            <div class="container">
+                <div class="section__head mb-80">
+                    <div class="fs-70 title">Turn your vision <br> into income</div>
+                </div>
+                <div class="info-screen__body">
+                    <div class="info-screen__img">
+                        <img loading="lazy" src="images/content/content-img-01.jpg" alt="">
+                    </div>
+                    <div class="info-screen__text">
+                        <p class="fs-20">LevelPro is a full cycle agency for b2c and b2b clients. We believe in the power of visual messages, meaningful design and strong web-development</p>
+                        <a href="#" class="hover-line btn c-red">
+                            Read about us
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M3.75 12H19.6497M13.5 18.75L20.25 12L13.5 5.25" stroke="currentColor" stroke-width="1.5" stroke-linecap="square"/>
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <div class="horizontal-section">
+        <section class="section section--horizontal section-horizontal-1">
+            <div class="info-screen layout">
+                <div class="container">
+                    <div class="info-screen__head mb-80">
+                        <div class="fs-70 title">Latest projects</div>
+                        <a href="#" class="hover-line btn c-red">
+                            View all projects
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M3.75 12H19.6497M13.5 18.75L20.25 12L13.5 5.25" stroke="currentColor" stroke-width="1.5" stroke-linecap="square"/>
+                            </svg>
+                        </a>
+                    </div>
+                    <div class="info-screen__body">
+                        <div class="info-screen__video-row">
+                            <div class="info-screen__video-item">
+                                <div class="info-screen__video-bx">
+                                    <video preload="metadata" muted loop playsinline autoplay src="videos/content-video-01.webm"></video>
+                                </div>
+                                <div class="info-screen__video-text">
+                                    <div class="fs-20">Codici</div>
+                                    <div class="fs-20 c-grey">Video production</div>
+                                </div>
+                            </div>
+                            <div class="info-screen__video-item">
+                                <div class="info-screen__video-bx">
+                                    <video preload="metadata" muted loop playsinline autoplay src="videos/content-video-02.webm"></video>
+                                </div>
+                                <div class="info-screen__video-text">
+                                    <div class="fs-20">Codici</div>
+                                    <div class="fs-20 c-grey">Video production</div>
+                                </div>
+                            </div>
+                            <div class="info-screen__video-item">
+                                <div class="info-screen__video-bx">
+                                    <video preload="metadata" muted loop playsinline autoplay src="videos/content-video-03.webm"></video>
+                                </div>
+                                <div class="info-screen__video-text">
+                                    <div class="fs-20">Codici</div>
+                                    <div class="fs-20 c-grey">Video production</div>
+                                </div>
+                            </div>
+                            <div class="info-screen__video-item">
+                                <div class="info-screen__video-bx">
+                                    <video preload="metadata" muted loop playsinline autoplay src="videos/content-video-04.webm"></video>
+                                </div>
+                                <div class="info-screen__video-text">
+                                    <div class="fs-20">Codici</div>
+                                    <div class="fs-20 c-grey">Video production</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+        <section class="section section--horizontal section-horizontal-2 bg-black">
+            <div class="container">
+                <div class="what-we-do fs-hyper title">
+                    What we do
+                </div>
+            </div>
+
+        </section>
+        <section class="section section--vertical section-vertical-1 bg-black-2">
+            <div class="create-screen layout">
+                <div class="container">
+                    <div class="create-screen__title title fs-160">
+                        Design
+                    </div>
+                    <div class="create-screen__content">
+                        <div class="fs-20 c-grey">
+                            We conduct deep analysis and develop unique designs focusing on usability and core values of your brand
+                        </div>
+                        <ul class="create-screen__list">
+                            <li>Branding</li>
+                            <li>Identity</li>
+                            <li>UX/UI design</li>
+                        </ul>
+                    </div>
+                    <div class="create-screen__labels">
+                        <div class="create-screen__label">
+                            Figma
+                        </div>
+                        <div class="create-screen__label">
+                            Adobe Photoshop
+                        </div>
+                        <div class="create-screen__label">
+                            Adobe Illustrator
+                        </div>
+                        <div class="create-screen__label">
+                            Adobe After Effects
+                        </div>
+                        <div class="create-screen__label">
+                            Sketch
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section class="section section--vertical section-vertical-2" style="">
+            <h2>SIX</h2>
+        </section>
+    </div>
+
 <!--    <div class="section-wrapper">-->
 <!--        <section class="section section1 section-horizontal1">-->
 <!--            <h2>What we do</h2>-->
@@ -18,27 +176,30 @@ const footer = require('./layouts/basic/footer.ejs');
 <!--        <section class="section section1 section-horizontal2">-->
 <!--            <h2>FOUR FOUR FOUR</h2>-->
 <!--        </section>-->
-<!--        <section class="section section1 section-vertical">-->
+<!--        <section class="section section1 section-vertical" style="background: yellow !important;">-->
 <!--            <h2>FIVE</h2>-->
 <!--        </section>-->
 <!--        <section class="section section1 section-vertical2" style="background: green !important;">-->
 <!--            <h2>SIX</h2>-->
 <!--        </section>-->
 <!--    </div>-->
-    <div id="pinContainer">
-        <section class="panel blue">
-            <b>ONE</b>
-        </section>
-        <section class="panel turqoise">
-            <b>TWO</b>
-        </section>
-        <section class="panel green">
-            <b>THREE</b>
-        </section>
-        <section class="panel bordeaux">
-            <b>FOUR</b>
-        </section>
-    </div>
+<!--    <div>-->
+<!--        <div id="pinContainer">-->
+<!--            <section class="panel blue" style="background: blue; font-size: 600px;">-->
+<!--                <h2>ONE ONE ONE</h2>-->
+<!--            </section>-->
+<!--            <section class="panel turqoise" style="background: turquoise; width: 3000px">-->
+<!--                <b>TWO</b>-->
+<!--            </section>-->
+<!--            <section class="panel green" style="background: green">-->
+<!--                <b>THREE</b>-->
+<!--            </section>-->
+<!--            <section class="panel bordeaux" style="background: red">-->
+<!--                <b>FOUR</b>-->
+<!--            </section>-->
+<!--        </div>-->
+<!--    </div>-->
+
 </main>
 <%- footer() -%>
 

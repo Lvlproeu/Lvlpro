@@ -31,11 +31,12 @@ body {
 .container {
 	display: block;
 	width: 100%;
-	max-width: 1920px;
+	//max-width: 1920px;
 	padding-right: 80px;
 	padding-left: 80px;
 	margin-right: auto;
 	margin-left: auto;
+	height: 100%;
 	@media ($max1440) {
 		padding-right: 40px;
 		padding-left: 40px;

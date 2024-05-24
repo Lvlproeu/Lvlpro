@@ -1,54 +1,37 @@
+import gsap from 'gsap'
+import  {ScrollTrigger} from "gsap/ScrollTrigger";
 
-//
+gsap.registerPlugin(ScrollTrigger);
 
-//
-//
-// gsap.registerPlugin(ScrollTrigger);
-//
-// const tl = gsap.timeline();
-// const scrollContainer = document.querySelector('.section-wrapper');
-// if (scrollContainer) {
-//     // const sections = scrollContainer.querySelectorAll('.section1');
-//     //
-//     // let fullWidth = null;
-//     // sections.forEach(section => {
-//     //     const widthSection = section.offsetWidth ;
-//     //     fullWidth += widthSection;
-//     // })
-//     // fullWidth -= window.innerWidth
-//     // tl.to(scrollContainer, {x: -fullWidth})
-//     // tl.fromTo('.section-vertical', {x: '-100%', y: '+100%'}, {y: 0})
-//     // tl.fromTo('.section-vertical2', {x: '-200%', y: '+200%'}, {y: 0})
-//
-//     ScrollTrigger.create({
-//         animation: tl,
-//         trigger: '.section-wrapper',
-//         start: 'top top',
-//         end: `+=4000`,
-//         scrub: true,
-//         pin: true
-//     })
-//
-// }
+const tl = gsap.timeline();
 
-import ScrollMagic from 'scrollmagic';
-import '../../../node_modules/scrollmagic/scrollmagic/minified/plugins/animation.gsap.min'
+const horizontalContainer = document.querySelectorAll('.horizontal-section');
 
+horizontalContainer.forEach(horSec => {
+    const tl = gsap.timeline();
+    const horizontal1 = horSec.querySelector('.section-horizontal-1');
+    const horizontal1Width = horizontal1.offsetWidth - window.innerWidth;
+    const horizontal2 = horSec.querySelector('.section-horizontal-2');
+    const horizontal2Width = horizontal2.offsetWidth + horizontal1Width;
+    const vertical1 = horSec.querySelector('.section-vertical-1');
+    const vertical2 = horSec.querySelector('.section-vertical-2');
+    let end = null;
+    end += horizontal1Width;
+    end += horizontal2Width;
+    end += window.innerWidth*2
+    console.log(innerWidth*2 + horizontal2Width)
+    tl.fromTo(horizontal1, {x: '0px'}, { x: -horizontal1Width})
+        .fromTo(horizontal2, {x: '0px'}, { x: -horizontal2Width})
+        .fromTo(vertical1, {x: -(window.innerWidth+horizontal2Width), y: '100%'}, { y: 0})
+        .fromTo(vertical2, {x: -((window.innerWidth*2)+horizontal2Width), y: '100%'}, { y: 0})
 
-const controller = new ScrollMagic.Controller();
-
-// define movement of panels
-const wipeAnimation = new TimelineMax()
-    .fromTo("section.panel.turqoise", 1, {x: "-100%"}, {x: "0%", ease: Linear.easeNone})  // in from left
-    .fromTo("section.panel.green",    1, {x:  "100%"}, {x: "0%", ease: Linear.easeNone})  // in from right
-    .fromTo("section.panel.bordeaux", 1, {y: "-100%"}, {y: "0%", ease: Linear.easeNone}); // in from top
-
-// create scene to pin and link animation
-new ScrollMagic.Scene({
-    triggerElement: "#pinContainer",
-    triggerHook: "onLeave",
-    duration: "300%"
-}).setPin("#pinContainer")
-    .setTween(wipeAnimation)
-    .addIndicators() // add indicators (requires plugin)
-    .addTo(controller);
+    ScrollTrigger.create({
+        animation: tl,
+        trigger: horSec,
+        start: 'center center',
+        end: `+=${end}`,
+        scrub: true,
+        pin: true,
+        markers: true,
+    })
+})

@@ -8,6 +8,7 @@ import { initMarquee } from './modules/marquee';
 import { initPopups } from './modules/popup';
 import { initSelects } from './modules/select';
 import './modules/animationsScroll'
+import TitleSlider from "./modules/sliders/titleSlider";
 
 function initModules() {
 	initBodyLock();
@@ -17,8 +18,10 @@ function initModules() {
 	initPopups();
 	initForms();
 	initPhoneMasks();
-
-	document.body.classList.add('_loaded');
 }
 
 document.addEventListener('DOMContentLoaded', initModules);
+window.addEventListener('load', ()=> {
+	document.body.classList.add('_loaded');
+	new TitleSlider();
+});

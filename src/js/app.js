@@ -9,6 +9,7 @@ import { initPopups } from './modules/popup';
 import { initSelects } from './modules/select';
 import './modules/animationsScroll'
 import TitleSlider from "./modules/sliders/titleSlider";
+import './modules/steps-solve'
 
 function initModules() {
 	initBodyLock();

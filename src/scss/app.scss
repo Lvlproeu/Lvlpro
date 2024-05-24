@@ -28,9 +28,14 @@
 /* Components */
 @import 'modules/common/header.sass';
 @import 'modules/common/footer.sass';
+@import 'modules/common/breadcrumbs.sass';
 @import 'modules/common/marquee.sass';
 @import 'modules/common/popup.sass';
 @import 'modules/common/form.sass';
 @import 'modules/common/select.sass';
 
 /* Blocks */
+@import 'modules/blocks/section.sass';
+@import 'modules/blocks/links-cases.sass';
+@import 'modules/blocks/steps-solve.sass';
+@import 'modules/blocks/service-detailed.sass';

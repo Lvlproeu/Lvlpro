@@ -1,0 +1,62 @@
+.steps-solve
+    
+    &__wrapper
+        overflow: hidden
+
+    &__line
+        position: relative
+        height: 1px
+        background-color: $grey-2
+        margin-bottom: 24px
+        @media ($max1440)
+            margin-bottom: 20px
+    &__line-item
+        position: absolute
+        top: 0
+        left: 0
+        width: 0
+        height: 100%
+        background-color: $red
+
+
+    &__row
+        display: flex
+        margin: -20px
+        @media ($max1440)
+            margin: -10px
+
+
+
+    &__col
+        flex-shrink: 0
+        width: 25%
+        padding: 20px
+        @media ($max1440)
+            padding: 10px
+        @media ($max1023)
+            width: 50%
+        @media ($max767)
+            width: 100%
+
+        &._active
+            .steps-solve
+                &__head
+                    color: $black
+
+
+    &__head
+        margin-bottom: 40px
+        transition: color $time-03
+        @media ($max1440)
+            margin-bottom: 24px
+
+
+    &__body
+
+        .btn
+            margin-top: 24px
+
+
+    &__text
+
+

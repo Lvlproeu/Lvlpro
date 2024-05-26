@@ -97,7 +97,7 @@
             <div class="preloader__row">
                 <div>Level</div>
                 <div class="preloader__line-wrapper">
-                    <div class="preloader__line js-preloader-line" style="width: 0%; transition: width 2s linear;"></div>
+                    <div class="preloader__line js-preloader-line" style="width: 0%; transition: width 1s linear;"></div>
                 </div>
                 <div>Pro</div>
             </div>
@@ -108,8 +108,13 @@
 </div>
 
 <script>
-    document.body.classList.add('_lock');
+    setTimeout(() => {
+        const scrollbarWidth = window.innerWidth - document.body.offsetWidth;
+        document.body.classList.add('_lock');
+        document.body.style.paddingRight = scrollbarWidth + 'px';
+    }, 1);
     const preloader = document.querySelector('.js-preloader');
+    window.preloader = preloader;
     const preloaderLine = preloader.querySelector('.js-preloader-line');
     setTimeout(() => {
         preloaderLine.style.width = '80%';
@@ -125,6 +130,10 @@
                 preloaderLine.style.transitionDuration = '0.1s';
                 preloaderLine.style.width = '100%';
                 preloader.classList.add('_hide');
+                document.body.classList.remove('_lock');
+                document.body.style.paddingRight = '';
+                const event = new Event('loaderHide');
+                window.dispatchEvent(event);
             }
         }, 100);
     }
@@ -135,7 +144,6 @@
         e.preventDefault();
         e.stopPropagation();
         if (e.target.classList.contains('js-preloader')) {
-            document.body.classList.remove('_lock');
             document.body.classList.add('_hide-loader');
         }
     })

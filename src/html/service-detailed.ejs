@@ -1,0 +1,291 @@
+<%
+const headerBlack = require('./layouts/basic/header-black.ejs');
+const footer = require('./layouts/basic/footer.ejs');
+
+%>
+
+<%- headerBlack()-%>
+
+<div class="bradcrumbs">
+    <div class="container">
+        <ul>
+            <li>
+                <a href="/main.html">Home</a>
+            </li>
+            <li>
+                <a href="/ui-kit.html">ui-kit</a>
+            </li>
+            <li>
+                <span>Services</span>
+            </li>
+        </ul>
+    </div>
+</div>
+
+<main class="page">
+    <section class="mb-160">
+        <div class="container">
+            <div class="head-main">
+                <div class="head-main__start">
+                    <h1 class="title title-arrow fs-160">
+                        We create <span>design</span>
+                    </h1>
+                </div>
+                <div class="head-main__end c-grey">
+                    <p>We conduct deep analytics, develop a unique design and take care of the convenience of interfaces for users</p>
+                </div>
+            </div>
+        </div>
+        <div class="banner-service-detailed">
+            <div class="banner-service-detailed__img item-response">
+                <picture>
+                    <source media="(max-width: 767px)" srcset="images/content/service-detailed-banner-mob.jpg">
+                    <source media="(max-width: 1023px)" srcset="images/content/service-detailed-banner-tablet.jpg">
+                    <img class="js-image-scale" src="images/content/service-detailed-banner.jpg" alt="">
+                </picture>
+            </div>
+        </div>
+    </section>
+    <section class="mb-160">
+        <div class="container">
+            <div class="head-section">
+                <h2 class="title fs-100 fs-32-mob">Design</h2>
+                <button type="button" data-popup-trigger="feedback" class="btn c-red hover-line">
+                    <svg width="24" height="25" viewBox="0 0 24 25" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M15 12.5L19.5 17L15 21.5M6 3.5V17H18" stroke="currentColor" stroke-width="1.5" stroke-linecap="square"/>
+                    </svg>
+                    Boost your project
+                </button>
+            </div>
+            <div class="links-cases">
+                <a href="#" class="links-cases__row">
+                    <div class="links-cases__title title fs-40">Branding</div>
+                    <div class="links-cases__text c-grey">
+                        <p>Your brand has its own personality. Discover and make it live with LvlPro</p>
+                    </div>
+                    <div class="links-cases__arrow ico ico-56 c-red">
+                        <svg width="56" height="56" viewBox="0 0 56 56" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M8.75 28H45.8494M31.5 43.75L47.25 28L31.5 12.25" stroke="currentColor" stroke-width="6" stroke-linecap="square"/>
+                        </svg>
+                    </div>
+                </a>
+                <a href="#" class="links-cases__row">
+                    <div class="links-cases__title title fs-40">Identity</div>
+                    <div class="links-cases__text c-grey">
+                        <p>Reveal the personality of your brand via cohesive and unique design</p>
+                    </div>
+                    <div class="links-cases__arrow ico ico-56 c-red">
+                        <svg width="56" height="56" viewBox="0 0 56 56" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M8.75 28H45.8494M31.5 43.75L47.25 28L31.5 12.25" stroke="currentColor" stroke-width="6" stroke-linecap="square"/>
+                        </svg>
+                    </div>
+                </a>
+                <a href="#" class="links-cases__row">
+                    <div class="links-cases__title title fs-40">UX/UI design</div>
+                    <div class="links-cases__text c-grey">
+                        <p>Enhance the satisfaction and effectiveness of a user's interaction with your products</p>
+                    </div>
+                    <div class="links-cases__arrow ico ico-56 c-red">
+                        <svg width="56" height="56" viewBox="0 0 56 56" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M8.75 28H45.8494M31.5 43.75L47.25 28L31.5 12.25" stroke="currentColor" stroke-width="6" stroke-linecap="square"/>
+                        </svg>
+                    </div>
+                </a>
+            </div>
+        </div>
+    </section>
+    <section class="steps-solve mb-160 js-steps-solve">
+        <div class="container">
+            <div class="head-section">
+                <h2 class="title title-arrow fs-100 fs-32-mob">
+                    How we will solve <span>your problem</span>
+                </h2>
+            </div>
+            <div class="steps-solve__wrapper">
+                <div class="steps-solve__line">
+                    <div class="steps-solve__line-item js-step-line"></div>
+                </div>
+                <div class="steps-solve__row js-steps-solve-row">
+                    <div class="steps-solve__col js-step-solve-mob">
+                        <div class="steps-solve__head c-grey-2">
+                            <div class="mb-8">01</div>
+                            <div>Pre-project study</div>
+                        </div>
+                        <div class="steps-solve__body js-step-solve">
+                            <div class="title fs-40 mb-8">Pre-project study</div>
+                            <div class="steps-solve__text">
+                                <p>Let's analyze the current website, competitors, target audience. We will make recommendations, determine strategy and growth points.</p>
+                            </div>
+                            <button type="button" data-popup-trigger="feedback" class="btn c-red hover-line">
+                                <svg width="24" height="25" viewBox="0 0 24 25" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M15 12.5L19.5 17L15 21.5M6 3.5V17H18" stroke="currentColor" stroke-width="1.5" stroke-linecap="square"/>
+                                </svg>
+                                Boost your project
+                            </button>
+                        </div>
+                    </div>
+                    <div class="steps-solve__col js-step-solve-mob">
+                        <div class="steps-solve__head c-grey-2">
+                            <div class="mb-8">02</div>
+                            <div>Prototyping, searching for meaning</div>
+                        </div>
+                        <div class="steps-solve__body js-step-solve">
+                            <div class="title fs-40 mb-8">Prototyping, searching for meaning</div>
+                            <div class="steps-solve__text">
+                                <p>We will form a structure, prepare prototypes and lay down meanings.</p>
+                            </div>
+                            <button type="button" data-popup-trigger="feedback" class="btn c-red hover-line">
+                                <svg width="24" height="25" viewBox="0 0 24 25" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M15 12.5L19.5 17L15 21.5M6 3.5V17H18" stroke="currentColor" stroke-width="1.5" stroke-linecap="square"/>
+                                </svg>
+                                Boost your project
+                            </button>
+                        </div>
+                    </div>
+                    <div class="steps-solve__col js-step-solve-mob">
+                        <div class="steps-solve__head c-grey-2">
+                            <div class="mb-8">03</div>
+                            <div>Development of design concept</div>
+                        </div>
+                        <div class="steps-solve__body js-step-solve">
+                            <div class="title fs-40 mb-8">Development of design concept</div>
+                            <div class="steps-solve__text">
+                                <p>Based on the previous stages, we will offer our conceptual vision of what will make up the visual idea of ​​the brand</p>
+                            </div>
+                            <button type="button" data-popup-trigger="feedback" class="btn c-red hover-line">
+                                <svg width="24" height="25" viewBox="0 0 24 25" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M15 12.5L19.5 17L15 21.5M6 3.5V17H18" stroke="currentColor" stroke-width="1.5" stroke-linecap="square"/>
+                                </svg>
+                                Boost your project
+                            </button>
+                        </div>
+                    </div>
+                    <div class="steps-solve__col js-step-solve-mob">
+                        <div class="steps-solve__head c-grey-2">
+                            <div class="mb-8">04</div>
+                            <div>Scaling your design and support</div>
+                        </div>
+                        <div class="steps-solve__body js-step-solve">
+                            <div class="title fs-40 mb-8">Scaling your design and support</div>
+                            <div class="steps-solve__text">
+                                <p>We use a component approach when creating designs. So when you need to scale or maintain the design, there will be no problems with it</p>
+                            </div>
+                            <button type="button" data-popup-trigger="feedback" class="btn c-red hover-line">
+                                <svg width="24" height="25" viewBox="0 0 24 25" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M15 12.5L19.5 17L15 21.5M6 3.5V17H18" stroke="currentColor" stroke-width="1.5" stroke-linecap="square"/>
+                                </svg>
+                                Boost your project
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="we-love-banner section bg-black c-white js-we-love-banner">
+        <div class="container">
+            <div class="we-love-banner__title title text-center fs-160">We love what we do and we do it well</div>
+            <div class="we-love-banner__images js-we-love-banner-images">
+                <div class="container">
+                    <div class="we-love-banner__row">
+                        <div class="we-love-banner__col">
+                            <div class="we-love-banner__img item-response">
+                                <img src="images/content/we-love-banner-1.png" alt="">
+                            </div>
+                        </div>
+                        <div class="we-love-banner__col">
+                            <div class="we-love-banner__img item-response">
+                                <img src="images/content/we-love-banner-2.png" alt="">
+                            </div>
+                        </div>
+                        <div class="we-love-banner__col">
+                            <div class="we-love-banner__img item-response">
+                                <img src="images/content/we-love-banner-3.png" alt="">
+                            </div>
+                        </div>
+                        <div class="we-love-banner__col">
+                            <div class="we-love-banner__img item-response">
+                                <img src="images/content/we-love-banner-4.png" alt="">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+    <section class="latest-projects pt-160 pb-80 js-latest-projects">
+        <div class="container">
+            <div class="head-section">
+                <div class="title fs-100">Latest projects</div>
+                <a href="#" class="btn c-red hover-line hide-mobile">
+                    <svg width="24" height="25" viewBox="0 0 24 25" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M15 12.5L19.5 17L15 21.5M6 3.5V17H18" stroke="currentColor" stroke-width="1.5" stroke-linecap="square"/>
+                    </svg>
+                    View all projects
+                </a>
+            </div>
+            <div class="latest-projects__wrapper js-latest-projects-wrapper">
+                <div class="latest-projects__row js-latest-projects-row">
+                    <div class="latest-projects__col">
+                        <a href="#" class="latest-projects__item">
+                            <div class="latest-projects__video item-response">
+                                <video preload="metadata" muted loop playsinline autoplay src="videos/content-video-01.webm"></video>
+                            </div>
+                            <div class="latest-projects__text">
+                                <div>Codici</div>
+                                <div class="latest-projects__text-name c-grey">Video production</div>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="latest-projects__col">
+                        <a href="#" class="latest-projects__item">
+                            <div class="latest-projects__video item-response">
+                                <video preload="metadata" muted loop playsinline autoplay src="videos/content-video-02.webm"></video>
+                            </div>
+                            <div class="latest-projects__text">
+                                <div>Codici</div>
+                                <div class="latest-projects__text-name c-grey">Video production</div>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="latest-projects__col">
+                        <a href="#" class="latest-projects__item">
+                            <div class="latest-projects__video item-response">
+                                <video preload="metadata" muted loop playsinline autoplay src="videos/content-video-03.webm"></video>
+                            </div>
+                            <div class="latest-projects__text">
+                                <div>Codici</div>
+                                <div class="latest-projects__text-name c-grey">Video production</div>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="latest-projects__col">
+                        <a href="#" class="latest-projects__item">
+                            <div class="latest-projects__video item-response">
+                                <video preload="metadata" muted loop playsinline autoplay src="videos/content-video-04.webm"></video>
+                            </div>
+                            <div class="latest-projects__text">
+                                <div>Codici</div>
+                                <div class="latest-projects__text-name c-grey">Video production</div>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div class="mt-24 show-mobile">
+                <a href="#" class="btn c-red hover-line">
+                    <svg width="24" height="25" viewBox="0 0 24 25" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M15 12.5L19.5 17L15 21.5M6 3.5V17H18" stroke="currentColor" stroke-width="1.5" stroke-linecap="square"/>
+                    </svg>
+                    View all projects
+                </a>
+            </div>
+        </div>
+    </section>
+</main>
+<div class="overlay-page _before" style="position: fixed;left: 0;width: 100%;height: 100%;z-index: 100;background-color: #222222; top: 100%"></div>
+<div class="overlay-page _after" style="position: fixed;left: 0;width: 100%;height: 100%;z-index: 100;background-color: #222222; top: 0"></div>
+<%- footer() -%>
+
+

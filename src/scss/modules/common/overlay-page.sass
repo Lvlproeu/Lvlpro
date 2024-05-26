@@ -1,0 +1,19 @@
+.overlay-page
+    position: fixed
+    left: 0
+    width: 100%
+    height: 100%
+    z-index: 100
+    background-color: $black-2
+    transition: transform 0.5s
+    &._before
+        top: 100%
+    &._next
+        top: 0
+.js-show-overlay-page-before
+    .overlay-page._before
+        transform: translateY(-100%)
+
+body._loaded
+    .overlay-page._after
+        transform: translateY(-100%)

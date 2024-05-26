@@ -11,7 +11,16 @@ import './modules/animationsScroll'
 import TitleSlider from "./modules/sliders/titleSlider";
 import initAos from "./modules/aos";
 
+import { initTitleSlider } from "./modules/sliders/titleSlider";
+import { initImageScale } from './modules/imageScale';
+import { initStepsSolve } from './modules/stepsSolve';
+import { initWeLoveBanner } from './modules/weLoveBanner';
+import { initLatestProjects } from './modules/latestProjects';
+import { initOverlayPage } from './modules/overlayPage';
+
+
 function initModules() {
+	initOverlayPage();
 	initBodyLock();
 	initHeader();
 	initMarquee();
@@ -19,11 +28,59 @@ function initModules() {
 	initPopups();
 	initForms();
 	initPhoneMasks();
-	initAos();
+	// initAos();
+	initTitleSlider();
+
+	initImageScale();
+	// scrollTrigger на странице услуги детальной
+	initStepsSolve();
+	initWeLoveBanner();
+	initLatestProjects();
+
+	// считается, что главная страница загрузилась, если видео может проигрываться
+	const videoMainScreen = document.querySelector('.js-video-mainscreen');
+
+	if (videoMainScreen) {
+		window.videoMainScreen = videoMainScreen;
+
+		if (videoMainScreen.videoCanPlay) {
+			document.body.classList.add('_loaded');
+			if (!window.preloader) {
+				window.videoMainScreen.play();
+				if (window.titleSlider) {
+					window.titleSlider.swiperSlider.autoplay.start();
+				}
+			}
+		} else {
+			const interval = setInterval(() => {
+				if (videoMainScreen.videoCanPlay) {
+					clearInterval(interval);
+					document.body.classList.add('_loaded');
+					if (!window.preloader) {
+						window.videoMainScreen.play();
+						if (window.titleSlider) {
+							window.titleSlider.swiperSlider.autoplay.start();
+						}
+					}
+				}
+			}, 100);
+		}
+	} else {
+		document.body.classList.add('_loaded');
+	}
 }
 
 document.addEventListener('DOMContentLoaded', initModules);
-window.addEventListener('load', ()=> {
-	document.body.classList.add('_loaded');
-	new TitleSlider();
+
+window.addEventListener('loaderHide', () => {
+	if (window.videoMainScreen) {
+		if (window.videoMainScreen.videoCanPlay) {
+			window.videoMainScreen.play();
+		}
+	}
+	if (window.titleSlider) {
+		window.titleSlider.swiperSlider.autoplay.start();
+	}
 });
+
+

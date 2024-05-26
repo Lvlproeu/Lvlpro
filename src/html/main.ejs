@@ -1,15 +1,17 @@
 <%
+const preloader = require('./components/preloader.ejs');
 const headerWhite = require('./layouts/basic/header-white.ejs');
 const footer = require('./layouts/basic/footer.ejs');
 
 %>
 
 <%- headerWhite()-%>
+<%- preloader()-%>
 <main class="page">
     <section class="section">
         <div class="main-screen layout">
             <div class="main-screen__bg">
-                <video preload="metadata" muted loop playsinline autoplay src="videos/showreel_website_main.mp4"></video>
+                <video muted loop src="videos/showreel_website_main.mp4" oncanplay="this.videoCanPlay = true" class="js-video-mainscreen"></video>
             </div>
             <div class="container">
                 <div class="main-screen__body">
@@ -215,6 +217,7 @@ const footer = require('./layouts/basic/footer.ejs');
 <!--    </div>-->
 
 </main>
+<div class="overlay-page _before" style="position: fixed;left: 0;width: 100%;height: 100%;z-index: 100;background-color: #222222; top: 100%"></div>
 <%- footer() -%>
 
 

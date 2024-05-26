@@ -89,6 +89,7 @@
 	"target": "web",
 	"dependencies": {
 		"@fancyapps/ui": "^5.0.16",
+		"aos": "^3.0.0-beta.6",
 		"axios": "^1.6.8",
 		"gsap": "^3.12.5",
 		"imask": "^7.6.0",

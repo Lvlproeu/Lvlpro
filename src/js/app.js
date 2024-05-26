@@ -9,6 +9,7 @@ import { initPopups } from './modules/popup';
 import { initSelects } from './modules/select';
 import './modules/animationsScroll'
 import TitleSlider from "./modules/sliders/titleSlider";
+import initAos from "./modules/aos";
 
 function initModules() {
 	initBodyLock();
@@ -18,6 +19,7 @@ function initModules() {
 	initPopups();
 	initForms();
 	initPhoneMasks();
+	initAos();
 }
 
 document.addEventListener('DOMContentLoaded', initModules);

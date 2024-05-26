@@ -28,7 +28,7 @@ horizontalContainer.forEach(horSec => {
     ScrollTrigger.create({
         animation: tl,
         trigger: horSec,
-        start: 'center center',
+        start: 'top top',
         end: `+=${end}`,
         scrub: true,
         pin: true,

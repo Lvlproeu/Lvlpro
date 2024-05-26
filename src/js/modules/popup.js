@@ -92,13 +92,45 @@ export default class Popup {
 	closeCurrent() {
 		this.selector.classList.remove(this.data.open);
 		bodyLock.unlock();
+
+		const form = this.selector.querySelector('.js-form');
+
+		if (form) {
+			const formInstance = form.instanceForm;
+
+			for (const el of formInstance.fields) {
+				el.removeError();
+			}
+
+			const succesForm = form.classList.contains('_succes');
+			if (succesForm) {
+				formInstance.hideContainerResponse();
+				form.classList.remove('_succes');
+			}
+		}
 	}
 
 	setStepsAfterRequest() {
+		for (const el of this.anim.elements) {
+			el.classList.remove('_playing');
+		}
 		this.anim.elements = this.selector.querySelectorAll(
 			'[data-anim-step-after-request]'
 		);
+		for (const el of this.anim.elements) {
+			el.classList.add('_playing');
+		}
 		this.anim.index = this.anim.elements.length;
+	}
+
+	setStepsAfterCloseRequest() {
+		for (const el of this.anim.elements) {
+			el.classList.remove('_playing');
+		}
+		this.anim.elements = this.selector.querySelectorAll(
+			'[data-anim-step]:not([data-anim-step-after-request]'
+		);
+		this.anim.index = 0;
 	}
 
 	static open(name) {

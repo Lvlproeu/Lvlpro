@@ -118,6 +118,7 @@
     display: inline-flex
     align-items: center
     justify-content: center
+    letter-spacing: inherit
     gap: 8px
     align-self: flex-start
     transition: all $time-03
@@ -179,7 +180,19 @@
             margin-bottom: 120px
         @media ($max1023)
             margin-bottom: 100px
-
+.mt-24
+    margin-top: 24px
+.pt
+    &-80
+        padding-bottom: 80px
+    &-160
+        padding-top: 160px
+        @media ($max1440)
+            padding-top: 120px
+        @media ($max1023)
+            padding-top: 100px
+.pb-80
+    padding-bottom: 80px
 .bg-black
     background-color: $black
 .bg-black-2
@@ -191,7 +204,7 @@
         content: ''
         display: block
         padding-bottom: 100%
-    img,svg
+    img,svg,video
         position: absolute
         top: 0
         left: 0
@@ -221,3 +234,13 @@
                 margin-right: 4px
                 margin-bottom: 0.2em
             
+
+.text-center
+    text-align: center
+
+.hide-mobile
+    @media ($max767)
+        display: none !important
+.show-mobile
+    @media ($min768)
+        display: none !important

@@ -12,6 +12,7 @@ export default class Form {
 
 		this.data = {
 			sending: '_sending',
+			succes: '_succes',
 			containerResponse: '.js-form-after-request',
 		};
 
@@ -76,6 +77,15 @@ export default class Form {
 		}
 	}
 
+	hideContainerResponse() {
+		this.container.style.display = '';
+		this.containerResponse.style.display = 'none';
+
+		if (this.popup) {
+			this.popup.instancePopup.setStepsAfterCloseRequest();
+		}
+	}
+
 	onSubmit(e) {
 		e.preventDefault();
 
@@ -101,6 +111,8 @@ export default class Form {
 					if (response) {
 						console.log('ok', response);
 
+						THIS.container.classList.add(THIS.data.succes);
+
 						if (titleResponse) {
 							// TODO: сейчас запрос на тестовый jsonplaceholder, он возвращает успех 201
 							// когда будут реальные данные, поменять вывод текста из response.data.id на актуальный путь хранения текста заголовка
@@ -115,6 +127,17 @@ export default class Form {
 				})
 				.catch(function (error) {
 					console.log(error);
+
+					if (titleResponse) {
+						// TODO: сейчас запрос на тестовый jsonplaceholder, он возвращает ошибку 404
+						// когда будут реальные данные, поменять вывод текста из error.message на актуальный путь хранения текста заголовка
+						titleResponse.innerHTML = error.message;
+					}
+					if (textResponse) {
+						// TODO: сейчас запрос на тестовый jsonplaceholder, он возвращает ошибку 404
+						//  когда будут реальные данные, поменять вывод текста из error.message на актуальный путь хранения текста подзаголовка
+						textResponse.innerHTML = error.message;
+					}
 				})
 				.finally(function () {
 					THIS.container.classList.remove(THIS.data.sending);

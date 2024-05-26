@@ -1,7 +1,6 @@
 .steps-solve
     
-    &__wrapper
-        overflow: hidden
+    // &__wrapper
 
     &__line
         position: relative
@@ -20,39 +19,40 @@
 
 
     &__row
-        display: flex
-        margin: -20px
+        display: grid
+        grid-template-columns: repeat(4,1fr)
+        gap: 40px
         @media ($max1440)
-            margin: -10px
+            gap: 20px
+        @media ($max1023)
+            width: 200%
+        @media ($max767)
+            width: 400%
 
 
 
     &__col
-        flex-shrink: 0
-        width: 25%
-        padding: 20px
-        @media ($max1440)
-            padding: 10px
-        @media ($max1023)
-            width: 50%
-        @media ($max767)
-            width: 100%
-
         &._active
             .steps-solve
                 &__head
                     color: $black
+        &:not(._active)
+            pointer-events: none
+            .steps-solve
+                &__body
+                    @media ($max1023)
+                        opacity: 0
 
 
     &__head
         margin-bottom: 40px
-        transition: color $time-03
         @media ($max1440)
             margin-bottom: 24px
 
 
     &__body
-
+        @media ($max1023)
+            transition: opacity $time-03
         .btn
             margin-top: 24px
 

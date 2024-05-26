@@ -3,8 +3,8 @@ import 'swiper/css';
 import 'swiper/css/autoplay';
 
 export default class TitleSlider {
-    constructor() {
-        this.slider = document.querySelector('.js-titles-slider');
+    constructor(selector) {
+        this.slider = selector;
 
         this.swiperSlider = null;
         this.init();
@@ -25,5 +25,14 @@ export default class TitleSlider {
 
     init() {
         this.initSlider();
+        this.swiperSlider.autoplay.stop();
+    }
+}
+
+export function initTitleSlider() {
+    const selector = document.querySelector('.js-titles-slider');
+    if (selector) {
+        const titleSlider = new TitleSlider(selector);
+        window.titleSlider = titleSlider;
     }
 }

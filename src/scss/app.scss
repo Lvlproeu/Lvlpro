@@ -21,10 +21,12 @@
 @import 'base/ui-kit';
 
 /* Vendor */
+@import 'aos/dist/aos.css';
 
 /* Blocks */
 @import 'modules/blocks/main-screen.scss';
 @import 'modules/blocks/info-screen.scss';
+@import 'modules/blocks/create-screen.scss';
 /* Components */
 @import 'modules/common/overlay-page.sass';
 @import 'modules/common/header.sass';

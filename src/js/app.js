@@ -16,6 +16,7 @@ import { initLatestProjects } from './modules/latestProjects';
 import { initOverlayPage } from './modules/overlayPage';
 import { initScrollObserver } from './modules/scrollObserver';
 
+
 function initModules() {
 	initOverlayPage();
 	initBodyLock();
@@ -27,7 +28,6 @@ function initModules() {
 	initPhoneMasks();
 	initTitleSlider();
 	initImageScale();
-
 	// scrollTrigger на странице услуги детальной
 	initStepsSolve();
 	initWeLoveBanner();

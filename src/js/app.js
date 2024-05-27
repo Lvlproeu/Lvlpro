@@ -14,6 +14,7 @@ import { initStepsSolve } from './modules/stepsSolve';
 import { initWeLoveBanner } from './modules/weLoveBanner';
 import { initLatestProjects } from './modules/latestProjects';
 import { initOverlayPage } from './modules/overlayPage';
+import { initScrollObserver } from './modules/scrollObserver';
 
 function initModules() {
 	initOverlayPage();
@@ -24,9 +25,7 @@ function initModules() {
 	initPopups();
 	initForms();
 	initPhoneMasks();
-
 	initTitleSlider();
-
 	initImageScale();
 
 	// scrollTrigger на странице услуги детальной
@@ -34,13 +33,16 @@ function initModules() {
 	initWeLoveBanner();
 	initLatestProjects();
 
+
+	initScrollObserver();
+
 	// считается, что главная страница загрузилась, если видео может проигрываться
 	const videoMainScreen = document.querySelector('.js-video-mainscreen');
 
 	if (videoMainScreen) {
 		window.videoMainScreen = videoMainScreen;
 
-		if (videoMainScreen.videoCanPlay) {
+		const initMainscreen = function() {
 			document.body.classList.add('_loaded');
 			if (!window.preloader) {
 				window.videoMainScreen.play();
@@ -48,17 +50,15 @@ function initModules() {
 					window.titleSlider.swiperSlider.autoplay.start();
 				}
 			}
+		}
+
+		if (videoMainScreen.videoCanPlay) {
+			initMainscreen();
 		} else {
 			const interval = setInterval(() => {
 				if (videoMainScreen.videoCanPlay) {
 					clearInterval(interval);
-					document.body.classList.add('_loaded');
-					if (!window.preloader) {
-						window.videoMainScreen.play();
-						if (window.titleSlider) {
-							window.titleSlider.swiperSlider.autoplay.start();
-						}
-					}
+					initMainscreen();
 				}
 			}, 100);
 		}

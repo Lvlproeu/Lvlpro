@@ -27,11 +27,12 @@ const footer = require('./layouts/basic/footer.ejs');
         <div class="container">
             <div class="head-main">
                 <div class="head-main__start">
-                    <h1 class="title title-arrow fs-160">
-                        We create <span>design</span>
-                    </h1>
+                    <div class="title title-arrow fs-160">
+                        <div class="anim-opacity js-scroll-observe-el" data-duration="0.5" data-delay="0.5">We create</div>
+                        <span class="anim-opacity js-scroll-observe-el" data-duration="0.5" data-delay="1">design</span>
+                    </div>
                 </div>
-                <div class="head-main__end c-grey">
+                <div class="head-main__end c-grey anim-opacity js-scroll-observe-el" data-duration="0.5" data-delay="1.5">
                     <p>We conduct deep analytics, develop a unique design and take care of the convenience of interfaces for users</p>
                 </div>
             </div>
@@ -48,8 +49,8 @@ const footer = require('./layouts/basic/footer.ejs');
     </section>
     <section class="mb-160">
         <div class="container">
-            <div class="head-section">
-                <h2 class="title fs-100 fs-32-mob">Design</h2>
+            <div class="head-section anim-opacity js-scroll-observe-el">
+                <h2 class="title fs-100 fs-32-mob ">Design</h2>
                 <button type="button" data-popup-trigger="feedback" class="btn c-red hover-line">
                     <svg width="24" height="25" viewBox="0 0 24 25" fill="none" xmlns="http://www.w3.org/2000/svg">
                         <path d="M15 12.5L19.5 17L15 21.5M6 3.5V17H18" stroke="currentColor" stroke-width="1.5" stroke-linecap="square"/>
@@ -57,46 +58,52 @@ const footer = require('./layouts/basic/footer.ejs');
                     Boost your project
                 </button>
             </div>
-            <div class="links-cases">
-                <a href="#" class="links-cases__row">
-                    <div class="links-cases__title title fs-40">Branding</div>
-                    <div class="links-cases__text c-grey">
-                        <p>Your brand has its own personality. Discover and make it live with LvlPro</p>
-                    </div>
-                    <div class="links-cases__arrow ico ico-56 c-red">
-                        <svg width="56" height="56" viewBox="0 0 56 56" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <path d="M8.75 28H45.8494M31.5 43.75L47.25 28L31.5 12.25" stroke="currentColor" stroke-width="6" stroke-linecap="square"/>
-                        </svg>
-                    </div>
-                </a>
-                <a href="#" class="links-cases__row">
-                    <div class="links-cases__title title fs-40">Identity</div>
-                    <div class="links-cases__text c-grey">
-                        <p>Reveal the personality of your brand via cohesive and unique design</p>
-                    </div>
-                    <div class="links-cases__arrow ico ico-56 c-red">
-                        <svg width="56" height="56" viewBox="0 0 56 56" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <path d="M8.75 28H45.8494M31.5 43.75L47.25 28L31.5 12.25" stroke="currentColor" stroke-width="6" stroke-linecap="square"/>
-                        </svg>
-                    </div>
-                </a>
-                <a href="#" class="links-cases__row">
-                    <div class="links-cases__title title fs-40">UX/UI design</div>
-                    <div class="links-cases__text c-grey">
-                        <p>Enhance the satisfaction and effectiveness of a user's interaction with your products</p>
-                    </div>
-                    <div class="links-cases__arrow ico ico-56 c-red">
-                        <svg width="56" height="56" viewBox="0 0 56 56" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <path d="M8.75 28H45.8494M31.5 43.75L47.25 28L31.5 12.25" stroke="currentColor" stroke-width="6" stroke-linecap="square"/>
-                        </svg>
-                    </div>
-                </a>
+            <div class="links-cases js-scroll-observe-group" data-duration="0.5" data-delay="0.5">
+                <div class="links-cases__wrapper anim-opacity js-scroll-observe-group-el">
+                    <a href="#" class="links-cases__row">
+                        <div class="links-cases__title title fs-40">Branding</div>
+                        <div class="links-cases__text c-grey">
+                            <p>Your brand has its own personality. Discover and make it live with LvlPro</p>
+                        </div>
+                        <div class="links-cases__arrow ico ico-56 c-red">
+                            <svg width="56" height="56" viewBox="0 0 56 56" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M8.75 28H45.8494M31.5 43.75L47.25 28L31.5 12.25" stroke="currentColor" stroke-width="6" stroke-linecap="square"/>
+                            </svg>
+                        </div>
+                    </a>
+                </div>
+                <div class="links-cases__wrapper anim-opacity js-scroll-observe-group-el">
+                    <a href="#" class="links-cases__row">
+                        <div class="links-cases__title title fs-40">Identity</div>
+                        <div class="links-cases__text c-grey">
+                            <p>Reveal the personality of your brand via cohesive and unique design</p>
+                        </div>
+                        <div class="links-cases__arrow ico ico-56 c-red">
+                            <svg width="56" height="56" viewBox="0 0 56 56" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M8.75 28H45.8494M31.5 43.75L47.25 28L31.5 12.25" stroke="currentColor" stroke-width="6" stroke-linecap="square"/>
+                            </svg>
+                        </div>
+                    </a>
+                </div>
+                <div class="links-cases__wrapper anim-opacity js-scroll-observe-group-el">
+                    <a href="#" class="links-cases__row">
+                        <div class="links-cases__title title fs-40">UX/UI design</div>
+                        <div class="links-cases__text c-grey">
+                            <p>Enhance the satisfaction and effectiveness of a user's interaction with your products</p>
+                        </div>
+                        <div class="links-cases__arrow ico ico-56 c-red">
+                            <svg width="56" height="56" viewBox="0 0 56 56" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M8.75 28H45.8494M31.5 43.75L47.25 28L31.5 12.25" stroke="currentColor" stroke-width="6" stroke-linecap="square"/>
+                            </svg>
+                        </div>
+                    </a>
+                </div>
             </div>
         </div>
     </section>
     <section class="steps-solve mb-160 js-steps-solve">
         <div class="container">
-            <div class="head-section">
+            <div class="head-section js-scroll-observe-el">
                 <h2 class="title title-arrow fs-100 fs-32-mob">
                     How we will solve <span>your problem</span>
                 </h2>
@@ -261,7 +268,7 @@ const footer = require('./layouts/basic/footer.ejs');
                         </a>
                     </div>
                     <div class="latest-projects__col">
-                        <a href="#" class="latest-projects__item">
+                        <a href="#" class="latest-projects__item js-scroll-observe-el">
                             <div class="latest-projects__video item-response">
                                 <video preload="metadata" muted loop playsinline autoplay src="videos/content-video-04.webm"></video>
                             </div>

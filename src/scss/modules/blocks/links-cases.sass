@@ -1,4 +1,9 @@
 .links-cases
+    &__wrapper
+        &:last-child
+            .links-cases
+                &__row
+                    border-bottom-width: 1px
     &__row
         display: flex
         align-items: center
@@ -12,8 +17,6 @@
         @media ($max767)
             display: block
             padding: 16px 0
-        &:last-child
-            border-bottom-width: 1px
         @media ($hover)
             &:hover
                 background-color: $red

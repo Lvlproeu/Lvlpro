@@ -32,8 +32,6 @@ function initModules() {
 	initStepsSolve();
 	initWeLoveBanner();
 	initLatestProjects();
-
-
 	initScrollObserver();
 
 	// считается, что главная страница загрузилась, если видео может проигрываться

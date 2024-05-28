@@ -213,6 +213,11 @@
         object-fit: cover
 
 .title-arrow
+    line-height: 1.3
+    &__first
+        margin-top: -0.1em
+    &__second
+        margin-top: -0.4em
     span
         display: block
         @media ($min768)
@@ -232,7 +237,7 @@
                 background-position: center
                 background-color: currentColor
                 margin-right: 4px
-                margin-bottom: 0.2em
+                margin-bottom: 0.35em
             
 
 .text-center
@@ -246,6 +251,14 @@
         display: none !important
 
 
-.anim-opacity
+.anim-up-from-overflow
+    line-height: 1.3
     opacity: 0
     transform: translateY(100%)
+
+.anim-opacity
+    opacity: 0
+
+.anim-scale-from-up
+    transform: scaleY(0)
+    transform-origin: top center

@@ -1,22 +1,22 @@
 <%
-const preloader = require('./components/preloader.ejs');
+// const preloader = require('./components/preloader.ejs');
 const headerWhite = require('./layouts/basic/header-white.ejs');
 const footer = require('./layouts/basic/footer.ejs');
 
 %>
 
 <%- headerWhite()-%>
-<%- preloader()-%>
+
 <main class="page">
     <section class="section">
         <div class="main-screen layout">
             <div class="main-screen__bg">
-                <video muted loop src="videos/showreel_website_main.mp4" oncanplay="this.videoCanPlay = true" class="js-video-mainscreen"></video>
+                <video muted loop playsinline src="videos/showreel_website_main.mp4" oncanplay="this.videoCanPlay = true" class="js-video-mainscreen"></video>
             </div>
             <div class="container">
                 <div class="main-screen__body">
                     <div class="main-screen__row">
-                        <div class="main-screen__title" data-aos="fade-up">
+                        <div class="main-screen__title">
                             <div class="fs-160 title">We create</div>
                             <div class="fs-20 main-screen__desc">Full cycle agency that turns vision into income</div>
                         </div>
@@ -33,6 +33,7 @@ const footer = require('./layouts/basic/footer.ejs');
                                 </div>
                             </div>
                         </div>
+                        <div class="fs-20 main-screen__desc _mobile">Full cycle agency that turns vision into income</div>
                     </div>
                     <div class="main-screen__scroll fs-20 c-grey-2">Scroll down</div>
                 </div>
@@ -42,10 +43,10 @@ const footer = require('./layouts/basic/footer.ejs');
 
         </div>
     </section>
-    <section class="section">
+    <section class="section section--mobile-normal">
         <div class="info-screen layout">
             <div class="container">
-                <div class="section__head mb-80" data-aos="fade-up">
+                <div class="section__head mb-80">
                     <div class="fs-70 title">Turn your vision <br> into income</div>
                 </div>
                 <div class="info-screen__body">
@@ -66,7 +67,7 @@ const footer = require('./layouts/basic/footer.ejs');
         </div>
     </section>
     <div class="horizontal-section">
-        <section class="section section--horizontal section-horizontal-1">
+        <section class="section section--horizontal section-horizontal-1 section--mobile-normal js-video-block">
             <div class="info-screen layout">
                 <div class="container">
                     <div class="info-screen__head mb-80">
@@ -79,7 +80,7 @@ const footer = require('./layouts/basic/footer.ejs');
                         </a>
                     </div>
                     <div class="info-screen__body">
-                        <div class="info-screen__video-row">
+                        <div class="info-screen__video-row section-horizontal-1__video">
                             <div class="info-screen__video-item">
                                 <div class="info-screen__video-bx">
                                     <video preload="metadata" muted loop playsinline autoplay src="videos/content-video-01.webm"></video>
@@ -122,9 +123,9 @@ const footer = require('./layouts/basic/footer.ejs');
                 </div>
             </div>
         </section>
-        <section class="section section--horizontal section-horizontal-2 bg-black">
+        <section class="section section--horizontal section-horizontal-2 bg-black js-what-we-do">
             <div class="container">
-                <div class="what-we-do fs-hyper title">
+                <div class="what-we-do fs-hyper title js-what-we-do__row">
                     What we do
                 </div>
             </div>
@@ -180,41 +181,107 @@ const footer = require('./layouts/basic/footer.ejs');
                 </div>
             </div>
         </section>
-        <section class="section section--vertical section-vertical-2" style="">
-            <h2>SIX</h2>
+        <section class="section section--vertical section-vertical-2 bg-black-3">
+            <div class="create-screen layout c-white">
+                <div class="container">
+                    <div class="create-screen__row">
+                        <div class="create-screen__title title fs-160">
+                            Design
+                        </div>
+                        <div class="create-screen__content">
+                            <div class="fs-20 c-grey">
+                                We conduct deep analysis and develop unique designs focusing on usability and core values of your brand
+                            </div>
+                            <ul class="create-screen__list">
+                                <li>Branding</li>
+                                <li>Identity</li>
+                                <li>UX/UI design</li>
+                            </ul>
+                        </div>
+                        <div class="create-screen__background">
+                            <div class="create-screen__img create-screen__img--1">
+                                <img loading="lazy" src="images/content/background-img-01.jpg" alt="">
+                            </div>
+                            <div class="create-screen__img create-screen__img--2">
+                                <img loading="lazy" src="images/content/background-img-02.jpg" alt="">
+                            </div>
+                            <div class="create-screen__img create-screen__img--3">
+                                <img loading="lazy" src="images/content/background-img-03.jpg" alt="">
+                            </div>
+                        </div>
+                        <div class="create-screen__labels">
+                            <div class="create-screen__label">
+                                Figma
+                            </div>
+                            <div class="create-screen__label">
+                                Adobe Photoshop
+                            </div>
+                            <div class="create-screen__label">
+                                Adobe Illustrator
+                            </div>
+                            <div class="create-screen__label">
+                                Adobe After Effects
+                            </div>
+                            <div class="create-screen__label">
+                                Sketch
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+        <section class="section section--vertical section-vertical-3 bg-black-4">
+            <div class="create-screen layout c-white">
+                <div class="container">
+                    <div class="create-screen__row">
+                        <div class="create-screen__title title fs-160">
+                            Design
+                        </div>
+                        <div class="create-screen__content">
+                            <div class="fs-20 c-grey">
+                                We conduct deep analysis and develop unique designs focusing on usability and core values of your brand
+                            </div>
+                            <ul class="create-screen__list">
+                                <li>Branding</li>
+                                <li>Identity</li>
+                                <li>UX/UI design</li>
+                            </ul>
+                        </div>
+                        <div class="create-screen__background">
+                            <div class="create-screen__img create-screen__img--1">
+                                <img loading="lazy" src="images/content/background-img-01.jpg" alt="">
+                            </div>
+                            <div class="create-screen__img create-screen__img--2">
+                                <img loading="lazy" src="images/content/background-img-02.jpg" alt="">
+                            </div>
+                            <div class="create-screen__img create-screen__img--3">
+                                <img loading="lazy" src="images/content/background-img-03.jpg" alt="">
+                            </div>
+                        </div>
+                        <div class="create-screen__labels">
+                            <div class="create-screen__label">
+                                Figma
+                            </div>
+                            <div class="create-screen__label">
+                                Adobe Photoshop
+                            </div>
+                            <div class="create-screen__label">
+                                Adobe Illustrator
+                            </div>
+                            <div class="create-screen__label">
+                                Adobe After Effects
+                            </div>
+                            <div class="create-screen__label">
+                                Sketch
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
         </section>
     </div>
-
-<!--    <div class="section-wrapper">-->
-<!--        <section class="section section1 section-horizontal1">-->
-<!--            <h2>What we do</h2>-->
-<!--        </section>-->
-<!--        <section class="section section1 section-horizontal2">-->
-<!--            <h2>FOUR FOUR FOUR</h2>-->
-<!--        </section>-->
-<!--        <section class="section section1 section-vertical" style="background: yellow !important;">-->
-<!--            <h2>FIVE</h2>-->
-<!--        </section>-->
-<!--        <section class="section section1 section-vertical2" style="background: green !important;">-->
-<!--            <h2>SIX</h2>-->
-<!--        </section>-->
-<!--    </div>-->
-<!--    <div>-->
-<!--        <div id="pinContainer">-->
-<!--            <section class="panel blue" style="background: blue; font-size: 600px;">-->
-<!--                <h2>ONE ONE ONE</h2>-->
-<!--            </section>-->
-<!--            <section class="panel turqoise" style="background: turquoise; width: 3000px">-->
-<!--                <b>TWO</b>-->
-<!--            </section>-->
-<!--            <section class="panel green" style="background: green">-->
-<!--                <b>THREE</b>-->
-<!--            </section>-->
-<!--            <section class="panel bordeaux" style="background: red">-->
-<!--                <b>FOUR</b>-->
-<!--            </section>-->
-<!--        </div>-->
-<!--    </div>-->
 
 </main>
 <div class="overlay-page _before" style="position: fixed;left: 0;width: 100%;height: 100%;z-index: 100;background-color: #222222; top: 100%"></div>

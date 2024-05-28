@@ -1,13 +1,11 @@
 .info-screen {
   position: relative;
+  background: $white;
   &__head {
-    position: sticky;
-    left: 80px;
-    top: 80px;
-    width: calc(100vw - 160px);
     display: flex;
     justify-content: space-between;
     align-items: center;
+    width: calc(100vw - 80px*2);
     .btn {
       align-self: normal;
     }
@@ -16,11 +14,31 @@
     display: flex;
     gap: 40px;
     padding-left: 300px;
+    @media ($max1920) {
+      padding-left: 218px;
+    }
+    @media ($max1440) {
+      padding-left: 0px;
+      gap: 20px;
+    }
+    @media ($max1023) {
+      gap: 24px;
+    }
+    @media (max-width: 600px) {
+      flex-direction: column;
+    }
   }
   &__img {
     position: relative;
     width: 100%;
     padding-bottom: pct-s(580, 1460);
+    @media ($max1023) {
+      padding-bottom: 28%;
+      min-height: 203px;
+    }
+    @media (max-width: 600px) {
+      padding-bottom: 53%;
+    }
     img {
       position: absolute;
       top: 0;
@@ -36,24 +54,55 @@
     display: flex;
     flex-direction: column;
     gap: 40px;
+    @media ($max1023) {
+      max-width: none;
+    }
+    @media (max-width: 600px) {
+      gap: 16px;
+    }
   }
   &__video-row {
     display: flex;
     flex-wrap: nowrap;
     gap: 190px;
+    @media ($max1920) {
+      gap: 130px;
+    }
+    @media ($max1279) {
+      gap: 40px 20px;
+      flex-wrap: wrap;
+      width: 100%;
+    }
   }
   &__video-item {
     display: flex;
     flex-direction: column;
     gap: 16px;
+    @media ($max1279) {
+      width: calc(100% / 2 - 20px / 2);
+    }
     &:nth-child(even) {
       margin-top: 100px;
+      @media ($max1920) {
+        margin-top: 70px;
+      }
+      @media ($max1279) {
+        margin-top: 0;
+      }
     }
   }
   &__video-bx {
     position: relative;
     width: 860px;
     padding-bottom: pct-s(484, 860);
+    @media ($max1920) {
+      padding-bottom: pct-s(394, 633);
+      width: 633px;
+    }
+    @media ($max1279) {
+      width: 100%;
+      padding-bottom: pct-s(198, 354);
+    }
     video {
       position: absolute;
       top: 0;
@@ -62,6 +111,11 @@
       height: 100%;
       object-fit: cover;
     }
+  }
+  &__video-text {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
   }
 }
 

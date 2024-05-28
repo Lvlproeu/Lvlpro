@@ -53,11 +53,13 @@
             font-size: 32px
     &-160
         font-size: 160px
-        @media ($max1440)
+        @media ($max1920)
             font-size: 100px
-        @media ($max1023)
+        @media ($max1440)
             font-size: 80px
         @media ($max767)
+            font-size: 60px
+        @media (max-width: 600px)
             font-size: 40px
     &-hyper
         font-size: 600px
@@ -174,6 +176,10 @@
         margin-bottom: 8px
     &-80
         margin-bottom: 80px
+        @media ($max1440)
+            margin-bottom: 60px
+        @media ($max1023)
+            margin-bottom: 40px
     &-160
         margin-bottom: 160px
         @media ($max1440)
@@ -197,6 +203,10 @@
     background-color: $black
 .bg-black-2
     background-color: $black-2
+.bg-black-3
+    background-color: $black-3
+.bg-black-4
+    background-color: $black-4
 
 .item-response
     position: relative

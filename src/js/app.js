@@ -36,7 +36,6 @@ function initModules() {
 	initStepsSolve();
 	initWeLoveBanner();
 	initLatestProjects();
-
 	// считается, что главная страница загрузилась, если видео может проигрываться
 	const videoMainScreen = document.querySelector('.js-video-mainscreen');
 

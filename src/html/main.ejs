@@ -1,12 +1,12 @@
 <%
-// const preloader = require('./components/preloader.ejs');
+const preloader = require('./components/preloader.ejs');
 const headerWhite = require('./layouts/basic/header-white.ejs');
 const footer = require('./layouts/basic/footer.ejs');
 
 %>
 
 <%- headerWhite()-%>
-
+<%- preloader()-%>
 <main class="page">
     <section class="section">
         <div class="main-screen layout">
@@ -17,25 +17,31 @@ const footer = require('./layouts/basic/footer.ejs');
                 <div class="main-screen__body">
                     <div class="main-screen__row">
                         <div class="main-screen__title">
-                            <div class="fs-160 title">We create</div>
-                            <div class="fs-20 main-screen__desc">Full cycle agency that turns vision into income</div>
+                            <div class="fs-160 title overflow-hidden js-scroll-observe-el">
+                                <div class="anim-up-from-overflow js-scroll-observe-el-inner" data-duration="0.5" data-delay="0.5">
+                                    We create
+                                </div>
+                            </div>
+                            <div class="fs-20 main-screen__desc anim-opacity js-scroll-observe-el" data-duration="0.5" data-delay="1.5">Full cycle agency that turns vision into income</div>
                         </div>
-                        <div class="swiper fs-160 title js-titles-slider main-screen__slider">
-                            <div class="swiper-wrapper">
-                                <div class="swiper-slide">
-                                    video production
-                                </div>
-                                <div class="swiper-slide">
-                                    UX/UI design
-                                </div>
-                                <div class="swiper-slide">
-                                    development
+                        <div class="overflow-hidden js-scroll-observe-el">
+                            <div class="swiper fs-160 title js-titles-slider main-screen__slider anim-up-from-overflow js-scroll-observe-el-inner" data-duration="0.5" data-delay="1">
+                                <div class="swiper-wrapper">
+                                    <div class="swiper-slide">
+                                        video production
+                                    </div>
+                                    <div class="swiper-slide">
+                                        UX/UI design
+                                    </div>
+                                    <div class="swiper-slide">
+                                        development
+                                    </div>
                                 </div>
                             </div>
                         </div>
                         <div class="fs-20 main-screen__desc _mobile">Full cycle agency that turns vision into income</div>
                     </div>
-                    <div class="main-screen__scroll fs-20 c-grey-2">Scroll down</div>
+                    <div class="main-screen__scroll fs-20 anim-opacity c-grey-2 js-scroll-observe-el" data-duration="0.5" data-delay="1.5">Scroll down</div>
                 </div>
 
             </div>
@@ -47,9 +53,15 @@ const footer = require('./layouts/basic/footer.ejs');
         <div class="info-screen layout">
             <div class="container">
                 <div class="section__head mb-80">
-                    <div class="fs-70 title">Turn your vision <br> into income</div>
+                    <div class="fs-70 title">
+                        <div class="overflow-hidden js-scroll-observe-el">
+                            <div class="anim-up-from-overflow js-scroll-observe-el-inner" data-duration="0.5">Turn your vision</div>
+                        </div>
+                        <div class="overflow-hidden js-scroll-observe-el">
+                            <div class="anim-up-from-overflow js-scroll-observe-el-inner" data-duration="0.5" data-delay="0.5">into income</div></div>
+                    </div>
                 </div>
-                <div class="info-screen__body">
+                <div class="info-screen__body anim-opacity js-scroll-observe-el" data-duration="0.5" data-delay="0.5" data-ratio="0.5">
                     <div class="info-screen__img">
                         <img loading="lazy" src="images/content/content-img-01.jpg" alt="">
                     </div>
@@ -135,31 +147,31 @@ const footer = require('./layouts/basic/footer.ejs');
             <div class="create-screen layout c-white">
                 <div class="container">
                     <div class="create-screen__row">
-                        <div class="create-screen__title title fs-160">
-                            Design
+                        <div class="create-screen__title title fs-160 overflow-hidden js-scroll-observe-el">
+                            <div class="anim-up-from-overflow js-scroll-observe-el-inner" data-duration="0.5">Design</div>
                         </div>
                         <div class="create-screen__content">
-                            <div class="fs-20 c-grey">
+                            <div class="fs-20 c-grey anim-opacity js-scroll-observe-el" data-duration="0.5" data-delay="0.5" >
                                 We conduct deep analysis and develop unique designs focusing on usability and core values of your brand
                             </div>
-                            <ul class="create-screen__list">
+                            <ul class="create-screen__list anim-opacity js-scroll-observe-el" data-duration="0.5" data-delay="1">
                                 <li>Branding</li>
                                 <li>Identity</li>
                                 <li>UX/UI design</li>
                             </ul>
                         </div>
                         <div class="create-screen__background">
-                            <div class="create-screen__img create-screen__img--1">
-                                <img loading="lazy" src="images/content/background-img-01.jpg" alt="">
+                            <div class="create-screen__img create-screen__img--1 overflow-hidden js-scroll-observe-el">
+                                <img class="anim-down-from-overflow js-scroll-observe-el-inner" data-duration="0.5" data-delay="0.5" loading="lazy" src="images/content/background-img-01.jpg" alt="">
                             </div>
-                            <div class="create-screen__img create-screen__img--2">
-                                <img loading="lazy" src="images/content/background-img-02.jpg" alt="">
+                            <div class="create-screen__img create-screen__img--2 overflow-hidden js-scroll-observe-el">
+                                <img class="anim-down-from-overflow js-scroll-observe-el-inner" data-duration="0.5" data-delay="0.5" loading="lazy" src="images/content/background-img-02.jpg" alt="">
                             </div>
-                            <div class="create-screen__img create-screen__img--3">
-                                <img loading="lazy" src="images/content/background-img-03.jpg" alt="">
+                            <div class="create-screen__img create-screen__img--3 overflow-hidden js-scroll-observe-el">
+                                <img class="anim-down-from-overflow js-scroll-observe-el-inner" data-duration="0.5" data-delay="1" loading="lazy" src="images/content/background-img-03.jpg" alt="">
                             </div>
                         </div>
-                        <div class="create-screen__labels">
+                        <div class="create-screen__labels anim-opacity js-scroll-observe-el" data-duration="0.5" data-delay="1.5">
                             <div class="create-screen__label">
                                 Figma
                             </div>

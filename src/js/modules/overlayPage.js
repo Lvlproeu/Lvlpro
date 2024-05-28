@@ -4,7 +4,7 @@
 export default class OverlayPage {
 	constructor() {
 		this.data = {
-			showOverlayBefore: 'js-show-overlay-page-before',
+			showOverlayBefore: '_show-overlay-page-before',
 		};
 
 		this.overlayBefore = document.querySelector('.overlay-page._before');

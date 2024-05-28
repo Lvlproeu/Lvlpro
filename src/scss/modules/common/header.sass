@@ -1,9 +1,18 @@
+body._hide-overlay-page-after,
+body._hide-loader
+	.header
+		opacity: 1
+body._hide-loader
+	.header
+		transition-delay: 1s
 .header
 	position: absolute
 	top: 0
 	left: 0
 	width: 100%
 	z-index: 10
+	opacity: 0
+	transition: opacity 0.5s 0.5s
 	&:not(._open-menu)
 		.menu-header
 			@media ($max1023)

@@ -11,12 +11,13 @@ export default class ScrollObserver {
 			group: 'js-scroll-observe-group',
 			groupEl: '.js-scroll-observe-group-el',
 			groupInnerEl: 'js-scroll-observe-group-el-inner',
+			animated: '_animated',
 		};
 
 		this.options = {
 			root: null,
 			rootMargin: '0px',
-			threshold: [0, 1],
+			threshold: [0, 0.6, 1],
 		};
 
 		this.elements = document.querySelectorAll('.js-scroll-observe-el');
@@ -38,11 +39,11 @@ export default class ScrollObserver {
 				if (entry.isIntersecting) {
 					const el = entry.target;
 					const ratio = entry.intersectionRatio;
-					let cur = null;
+					let current = el;
 
-					if  (ratio >= 1) {
-						if (el.classList.contains(this.data.group)) {
-							const elements = el.querySelectorAll(this.data.groupEl);
+					if (ratio >= ScrollObserver.getRatio(el)) {
+						if (current.classList.contains(this.data.group)) {
+							const elements = current.querySelectorAll(this.data.groupEl);
 							elements.forEach((item, index) => {
 								gsap.to(item, {
 									x: 0,
@@ -52,26 +53,30 @@ export default class ScrollObserver {
 									scale: 1,
 									duration: ScrollObserver.getDuration(el),
 									delay: ScrollObserver.getDelay(el) * index,
+									onComplete: () => {
+										item.classList.add(this.data.animated);
+									},
 								});
 							});
 						} else {
 							const inner = el.querySelector(this.data.innerEl);
-							cur = inner || el;
-							gsap.to(cur, {
+							if (inner) {
+								current = inner;
+							}
+							gsap.to(current, {
 								x: 0,
 								y: 0,
 								rotate: 0,
 								opacity: 1,
 								scale: 1,
-								duration: ScrollObserver.getDuration(cur),
-								delay: ScrollObserver.getDelay(cur),
+								duration: ScrollObserver.getDuration(current),
+								delay: ScrollObserver.getDelay(current),
 							});
 						}
-	
+
+						current.classList.add(this.data.animated);
 						observer.unobserve(el);
 					}
-
-
 				}
 			}
 		}, this.options);
@@ -93,6 +98,10 @@ export default class ScrollObserver {
 
 	static getDuration(el) {
 		return el.hasAttribute('data-duration') ? el.dataset.duration : '0.5';
+	}
+
+	static getRatio(el) {
+		return el.hasAttribute('data-ratio') ? Number(el.dataset.ratio) : 1;
 	}
 }
 

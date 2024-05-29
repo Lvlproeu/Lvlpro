@@ -16,12 +16,18 @@ import { initLatestProjects } from './modules/latestProjects';
 import { initOverlayPage } from './modules/overlayPage';
 import { initScrollObserver } from './modules/scrollObserver';
 
+/**
+ * Длительность оверлея открытия страницы. 
+ * При изменении значения изменить длительность в стилях в классе .overlay-page
+ */
+const overlayPageAfterTime = 500;
+
 const initMainscreen = function () {
 	setTimeout(() => {
 		if (!window.scrollObserver) {
 			initScrollObserver();
 		}
-	}, 500);
+	}, overlayPageAfterTime);
 
 	if (window.videoMainScreen) {
 		window.videoMainScreen.play();
@@ -78,7 +84,7 @@ function initModules() {
 			if (!window.scrollObserver) {
 				initScrollObserver();
 			}
-		}, 500);
+		}, overlayPageAfterTime);
 	}
 }
 

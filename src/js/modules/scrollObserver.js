@@ -39,47 +39,54 @@ export default class ScrollObserver {
 				if (entry.isIntersecting) {
 					const el = entry.target;
 					const ratio = entry.intersectionRatio;
-					let current = el;
 
 					if (ratio >= ScrollObserver.getRatio(el)) {
-						if (current.classList.contains(this.data.group)) {
-							const elements = current.querySelectorAll(this.data.groupEl);
-							elements.forEach((item, index) => {
-								gsap.to(item, {
-									x: 0,
-									y: 0,
-									rotate: 0,
-									opacity: 1,
-									scale: 1,
-									duration: ScrollObserver.getDuration(el),
-									delay: ScrollObserver.getDelay(el) * index,
-									onComplete: () => {
-										item.classList.add(this.data.animated);
-									},
-								});
-							});
+						if (this.isGroup(el)) {
+							this.startAnimationGroup(el);
 						} else {
-							const inner = el.querySelector(this.data.innerEl);
-							if (inner) {
-								current = inner;
-							}
-							gsap.to(current, {
-								x: 0,
-								y: 0,
-								rotate: 0,
-								opacity: 1,
-								scale: 1,
-								duration: ScrollObserver.getDuration(current),
-								delay: ScrollObserver.getDelay(current),
-							});
+							this.startAnimation(el);
 						}
-
-						current.classList.add(this.data.animated);
 						observer.unobserve(el);
 					}
 				}
 			}
 		}, this.options);
+	}
+
+	startAnimation(el) {
+		const inner = el.querySelector(this.data.innerEl);
+		let current = el;
+		if (inner) {
+			current = inner;
+		}
+		gsap.to(current, {
+			x: 0,
+			y: 0,
+			opacity: 1,
+			duration: ScrollObserver.getDuration(current),
+			delay: ScrollObserver.getDelay(current),
+			onStart: () => {
+				if (inner) {
+					el.classList.add(this.data.animated);
+				}
+				current.classList.add(this.data.animated);
+			},
+		});
+	}
+
+	startAnimationGroup(el) {
+		const elements = el.querySelectorAll(this.data.groupEl);
+		gsap.to(elements, {
+			x: 0,
+			y: 0,
+			opacity: 1,
+			duration: ScrollObserver.getDuration(el),
+			delay: ScrollObserver.getDelay(el),
+			stagger: ScrollObserver.getDelayGroup(el),
+			onStart: () => {
+				el.classList.add(this.data.animated);
+			},
+		});
 	}
 
 	startObserve() {
@@ -92,8 +99,16 @@ export default class ScrollObserver {
 		}
 	}
 
+	isGroup(el) {
+		return el.classList.contains(this.data.group);
+	}
+
 	static getDelay(el) {
 		return el.hasAttribute('data-delay') ? el.dataset.delay : '0';
+	}
+
+	static getDelayGroup(el) {
+		return el.hasAttribute('data-delay-group') ? el.dataset.delayGroup : '0.5';
 	}
 
 	static getDuration(el) {

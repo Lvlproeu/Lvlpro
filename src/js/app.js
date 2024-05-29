@@ -17,7 +17,11 @@ import { initOverlayPage } from './modules/overlayPage';
 import { initScrollObserver } from './modules/scrollObserver';
 
 const initMainscreen = function () {
-	initScrollObserver();
+	setTimeout(() => {
+		if (!window.scrollObserver) {
+			initScrollObserver();
+		}
+	}, 500);
 
 	if (window.videoMainScreen) {
 		window.videoMainScreen.play();
@@ -68,8 +72,13 @@ function initModules() {
 			}, 100);
 		}
 	} else {
-		initScrollObserver();
 		document.body.classList.add('_loaded', '_hide-overlay-page-after');
+
+		setTimeout(() => {
+			if (!window.scrollObserver) {
+				initScrollObserver();
+			}
+		}, 500);
 	}
 }
 

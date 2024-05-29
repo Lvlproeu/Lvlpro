@@ -9,8 +9,8 @@
         display: flex
         flex-wrap: nowrap
         gap: 190px
-        @media ($max1920)
-            gap: calc(190/1920*100vw)
+        @media ($max1919)
+            gap: calc(190/1919*100vw)
         @media ($max1023)
             display: grid
             grid-template-columns: repeat(2, 1fr)
@@ -21,20 +21,20 @@
     &__col
         flex-shrink: 0
         width: 860px
-        @media ($max1920)
-            width: calc(860/1920*100vw)
+        @media ($max1919)
+            width: calc(860/1919*100vw)
         @media ($max1023)
             width: auto
         &:first-child
             margin-left: 300px
-            @media ($max1920)
-                margin-left: calc(300/1920*100vw)
+            @media ($max1919)
+                margin-left: calc(300/1919*100vw)
             @media ($max1023)
                 margin-left: 0
         &:nth-child(even)
             margin-top: 122px
-            @media ($max1920)
-                margin-top: calc(122/1920*100vw)
+            @media ($max1919)
+                margin-top: calc(122/1919*100vw)
             @media ($max1023)
                 margin-top: 0
     &__item

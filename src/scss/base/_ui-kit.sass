@@ -53,13 +53,11 @@
             font-size: 32px
     &-160
         font-size: 160px
-        @media ($max1920)
+        @media ($max1919)
             font-size: 100px
-        @media ($max1440)
+        @media ($max1023)
             font-size: 80px
         @media ($max767)
-            font-size: 60px
-        @media (max-width: 600px)
             font-size: 40px
     &-hyper
         font-size: 600px
@@ -228,11 +226,13 @@
         margin-top: -0.1em
     &__second
         margin-top: -0.4em
-    span
         display: block
         @media ($min768)
             display: flex
             align-items: flex-end
+        &._animated
+            &:before
+                opacity: 1
         &:before
             @media ($min768)
                 content: ''
@@ -248,6 +248,8 @@
                 background-color: currentColor
                 margin-right: 4px
                 margin-bottom: 0.35em
+                opacity: 0
+                transition: opacity 0.5s $time-03
             
 
 .text-center

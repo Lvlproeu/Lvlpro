@@ -6,7 +6,7 @@ const footer = require('./layouts/basic/footer.ejs');
 
 <%- headerBlack()-%>
 
-<div class="bradcrumbs">
+<div class="bradcrumbs anim-opacity js-scroll-observe-el" data-duration="0.5">
     <div class="container">
         <ul>
             <li>
@@ -29,14 +29,14 @@ const footer = require('./layouts/basic/footer.ejs');
                 <div class="head-main__start">
                     <div class="title title-arrow fs-160">
                         <div class="title-arrow__first overflow-hidden js-scroll-observe-el">
-                            <div class="anim-up-from-overflow js-scroll-observe-el-inner" data-duration="0.5" data-delay="0.5">We create</div>
+                            <div class="anim-up-from-overflow js-scroll-observe-el-inner" data-duration="0.5">We create</div>
                         </div>
                         <div class="title-arrow__second overflow-hidden js-scroll-observe-el">
-                            <span class="anim-up-from-overflow js-scroll-observe-el-inner" data-duration="0.5" data-delay="1">design</span>
+                            <span class="anim-up-from-overflow js-scroll-observe-el-inner" data-duration="0.5" data-delay="0.5">design</span>
                         </div>
                     </div>
                 </div>
-                <div class="head-main__end c-grey">
+                <div class="head-main__end c-grey anim-opacity js-scroll-observe-el" data-duration="0.5" data-delay="0.5">
                     <p>We conduct deep analytics, develop a unique design and take care of the convenience of interfaces for users</p>
                 </div>
             </div>
@@ -57,14 +57,16 @@ const footer = require('./layouts/basic/footer.ejs');
                 <div class="overflow-hidden js-scroll-observe-el">
                     <div class="title fs-100 fs-32-mob anim-up-from-overflow js-scroll-observe-el-inner" data-duration="0.5">Design</div>
                 </div>
-                <button type="button" data-popup-trigger="feedback" class="btn c-red hover-line">
-                    <svg width="24" height="25" viewBox="0 0 24 25" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <path d="M15 12.5L19.5 17L15 21.5M6 3.5V17H18" stroke="currentColor" stroke-width="1.5" stroke-linecap="square"/>
-                    </svg>
-                    Boost your project
-                </button>
+                <div class="head-section__btn-wrapper anim-opacity js-scroll-observe-el" data-duration="0.5">
+                    <button type="button" data-popup-trigger="feedback" class="btn c-red hover-line">
+                        <svg width="24" height="25" viewBox="0 0 24 25" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M15 12.5L19.5 17L15 21.5M6 3.5V17H18" stroke="currentColor" stroke-width="1.5" stroke-linecap="square"/>
+                        </svg>
+                        Boost your project
+                    </button>
+                </div>
             </div>
-            <div class="links-cases js-scroll-observe-group" data-duration="0.5" data-delay="0.5">
+            <div class="links-cases js-scroll-observe-group" data-duration="0.5" data-delay-group="0.5">
                 <div class="links-cases__wrapper anim-opacity js-scroll-observe-group-el">
                     <a href="#" class="links-cases__row">
                         <div class="links-cases__title title fs-40">Branding</div>
@@ -115,7 +117,7 @@ const footer = require('./layouts/basic/footer.ejs');
                         <div class="anim-up-from-overflow js-scroll-observe-el-inner" data-duration="0.5">How we will solve</div>
                     </div>
                     <div class="title-arrow__second overflow-hidden js-scroll-observe-el">
-                        <span class="anim-up-from-overflow js-scroll-observe-el-inner" data-duration="0.5" data-delay="0.5">your problem</span>
+                        <div class="anim-up-from-overflow js-scroll-observe-el-inner" data-duration="0.5" data-delay="0.5">your problem</div>
                     </div>
                 </div>
             </div>
@@ -204,7 +206,7 @@ const footer = require('./layouts/basic/footer.ejs');
         <div class="container">
             <div class="we-love-banner__title title text-center fs-160">
                 <div class="overflow-hidden js-scroll-observe-el">
-                    <div class="anim-up-from-overflow js-scroll-observe-el-inner" data-duration="0.5" data-delay="0.5">We love what we do and we do it well</div>
+                    <div class="anim-up-from-overflow js-scroll-observe-el-inner" data-duration="0.5">We love what we do and we do it well</div>
                 </div>
             </div>
             <div class="we-love-banner__images js-we-love-banner-images">
@@ -242,12 +244,14 @@ const footer = require('./layouts/basic/footer.ejs');
                 <div class="overflow-hidden js-scroll-observe-el">
                     <div class="title fs-100 fs-32-mob anim-up-from-overflow js-scroll-observe-el-inner" data-duration="0.5">Latest projects</div>
                 </div>
-                <a href="#" class="btn c-red hover-line hide-mobile">
-                    <svg width="24" height="25" viewBox="0 0 24 25" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <path d="M15 12.5L19.5 17L15 21.5M6 3.5V17H18" stroke="currentColor" stroke-width="1.5" stroke-linecap="square"/>
-                    </svg>
-                    View all projects
-                </a>
+                <div class="head-section__btn-wrapper anim-opacity js-scroll-observe-el" data-duration="0.5">
+                    <a href="#" class="btn c-red hover-line hide-mobile">
+                        <svg width="24" height="25" viewBox="0 0 24 25" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M15 12.5L19.5 17L15 21.5M6 3.5V17H18" stroke="currentColor" stroke-width="1.5" stroke-linecap="square"/>
+                        </svg>
+                        View all projects
+                    </a>
+                </div>
             </div>
             <div class="latest-projects__wrapper js-latest-projects-wrapper">
                 <div class="latest-projects__row js-latest-projects-row">

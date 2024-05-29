@@ -52,46 +52,59 @@
   &__desc {
     width: 100%;
     max-width: 393px;
-    @media (max-width: 600px) {
+    @media ($max767) {
       display: none;
     }
     &._mobile {
       display: none;
-      @media (max-width: 600px) {
+      @media ($max767) {
         display: block;
       }
     }
   }
   &__slider {
-    height: 196px;
-    background-image: url("data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTAwIiBoZWlnaHQ9IjEwMCIgdmlld0JveD0iMCAwIDEwMCAxMDAiIGZpbGw9Im5vbmUiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+CjxwYXRoIGQ9Ik02Mi41IDUwTDgxLjI1IDY4Ljc1TDYyLjUgODcuNU0yNSAxMi41VjY4Ljc1SDc1IiBzdHJva2U9IndoaXRlIiBzdHJva2Utd2lkdGg9IjEwIiBzdHJva2UtbGluZWNhcD0ic3F1YXJlIi8+Cjwvc3ZnPgo=");
-    background-size: 100px 100px ;
-    background-repeat: no-repeat;
-    background-position: 0 60%;
-    @media ($max1920) {
-      height: 115px;
-    }
-    @media ($max1440) {
-      background-size: 72px 72px ;
-      height: 95px;
-    }
+    height: 1.3em;
+    line-height: 1.3em;
+
     @media ($max767) {
-      background-size: 64px 64px ;
-      height: 75px;
-    }
-    @media (max-width: 600px) {
-      background: none;
-      height: 44px;
       margin-bottom: 16px;
     }
-    &.swiper {
-      padding-left: 100px;
-      @media ($max1440) {
-        padding-left: 80px;
+
+    &._animated {
+      &:before{
+        opacity: 1;
       }
-      @media (max-width: 600px) {
+    }
+
+    &:before {
+      content: '';
+      display: block;
+      position: absolute;
+      left: 0;
+      bottom: 0;
+      width: 0.625em;
+      height: 0.625em;
+      background-image: url("data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTAwIiBoZWlnaHQ9IjEwMCIgdmlld0JveD0iMCAwIDEwMCAxMDAiIGZpbGw9Im5vbmUiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+CjxwYXRoIGQ9Ik02Mi41IDUwTDgxLjI1IDY4Ljc1TDYyLjUgODcuNU0yNSAxMi41VjY4Ljc1SDc1IiBzdHJva2U9IndoaXRlIiBzdHJva2Utd2lkdGg9IjEwIiBzdHJva2UtbGluZWNhcD0ic3F1YXJlIi8+Cjwvc3ZnPgo=");
+      background-size: 100% 100%;
+      background-repeat: no-repeat;
+      background-position: center center;
+      margin-bottom: 0.21em;
+      opacity: 0;
+      transition: opacity 0.5s 0.5s;
+      @media ($max767) {
+        display: none;
+      }
+    }
+      
+    &.swiper {
+      padding-left: 0.625em;
+      @media ($max767) {
         padding-left: 0;
       }
+    }
+
+    .swiper-slide{
+      white-space: nowrap;
     }
   }
   &__scroll {

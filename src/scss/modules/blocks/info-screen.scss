@@ -14,7 +14,7 @@
     display: flex;
     gap: 40px;
     padding-left: 300px;
-    @media ($max1920) {
+    @media ($max1919) {
       padding-left: 218px;
     }
     @media ($max1440) {
@@ -65,7 +65,7 @@
     display: flex;
     flex-wrap: nowrap;
     gap: 190px;
-    @media ($max1920) {
+    @media ($max1919) {
       gap: 130px;
     }
     @media ($max1279) {
@@ -83,7 +83,7 @@
     }
     &:nth-child(even) {
       margin-top: 100px;
-      @media ($max1920) {
+      @media ($max1919) {
         margin-top: 70px;
       }
       @media ($max1279) {
@@ -95,7 +95,7 @@
     position: relative;
     width: 860px;
     padding-bottom: pct-s(484, 860);
-    @media ($max1920) {
+    @media ($max1919) {
       padding-bottom: pct-s(394, 633);
       width: 633px;
     }

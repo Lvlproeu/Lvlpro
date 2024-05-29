@@ -5,6 +5,7 @@ export default class OverlayPage {
 	constructor() {
 		this.data = {
 			showOverlayBefore: '_show-overlay-page-before',
+			time: 500,
 		};
 
 		this.overlayBefore = document.querySelector('.overlay-page._before');
@@ -48,7 +49,7 @@ export default class OverlayPage {
 		if (this.overlayBefore) {
 			document.body.classList.add(this.data.showOverlayBefore);
 			e.preventDefault();
-			setTimeout(this.onAnimationComplete, 500);
+			setTimeout(this.onAnimationComplete, this.data.time);
 		}
 	}
 

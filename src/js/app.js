@@ -18,7 +18,7 @@ import { initScrollObserver } from './modules/scrollObserver';
 
 /**
  * Длительность оверлея открытия страницы. 
- * При изменении значения изменить длительность в стилях в классе .overlay-page
+ * При изменении значения изменить длительность в стилях в классе .overlay-page и this.data.time в OverlayPage (overlayPage.js)
  */
 const overlayPageAfterTime = 500;
 

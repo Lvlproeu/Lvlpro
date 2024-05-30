@@ -93,38 +93,51 @@ gsap.registerPlugin(ScrollTrigger);
 //
 // new MainPageAnimation()
 
-const tl = gsap.timeline();
-
-const horizontalContainer = document.querySelectorAll('.horizontal-section');
-
-horizontalContainer.forEach(horSec => {
+function initMainPageAnim() {
     const tl = gsap.timeline();
-    const horizontal1 = horSec.querySelector('.section-horizontal-1');
-    const horizontal1Video = horizontal1.querySelector('.section-horizontal-1__video');
-    const horizontal1Width = horizontal1.offsetWidth - window.innerWidth;
-    const horizontal2 = horSec.querySelector('.section-horizontal-2');
-    const horizontal2Width = horizontal2.offsetWidth + horizontal1Width;
-    const vertical1 = horSec.querySelector('.section-vertical-1');
-    const vertical2 = horSec.querySelector('.section-vertical-2');
-    const vertical3 = horSec.querySelector('.section-vertical-3');
-    let end = null;
-    end += horizontal1Width;
-    end += horizontal2Width;
-    end += window.innerWidth*2
-    console.log(innerWidth*2 + horizontal2Width)
-    tl.fromTo(horizontal1Video, {x: '0px'}, { x: -horizontal1Width})
-        .fromTo(horizontal2, {x: '0px'}, { x: -horizontal2Width})
-        .fromTo(vertical1, {x: -(window.innerWidth+horizontal2Width), y: '100%'}, { y: 0})
-        .fromTo(vertical2, {x: -((window.innerWidth*2)+horizontal2Width), y: '100%'}, { y: 0})
-        .fromTo(vertical3, {x: -((window.innerWidth*3)+horizontal2Width), y: '100%'}, { y: 0})
 
-    ScrollTrigger.create({
-        animation: tl,
-        trigger: horSec,
-        start: 'top top',
-        end: () => "+="  + (horSec.offsetWidth * 2),
-        scrub: 2,
-        pin: true,
-        markers: true,
+    const horizontalContainer = document.querySelectorAll('.horizontal-section');
+
+    horizontalContainer.forEach(horSec => {
+        const tl = gsap.timeline();
+        const horizontal1 = horSec.querySelector('.section-horizontal-1');
+        const horizontal1Video = horizontal1.querySelector('.section-horizontal-1__video');
+        const horizontal1Width = horizontal1.offsetWidth - window.innerWidth;
+        const horizontal2 = horSec.querySelector('.section-horizontal-2');
+        const horizontal2Width = horizontal2.offsetWidth + horizontal1Width;
+        const vertical1 = horSec.querySelector('.section-vertical-1');
+        const vertical2 = horSec.querySelector('.section-vertical-2');
+        const vertical3 = horSec.querySelector('.section-vertical-3');
+        let end = null;
+        end += horizontal1Width;
+        end += horizontal2Width;
+        end += window.innerWidth*2
+        console.log(innerWidth*2 + horizontal2Width)
+        tl.fromTo(horizontal1Video, {x: '0px'}, { x: -horizontal1Width})
+            .fromTo(horizontal2, {x: '0px'}, { x: -horizontal2Width})
+            .fromTo(vertical1, {x: 0, y: '100%'}, { y: 0})
+            .fromTo(vertical2, {x: 0, y: '100%'}, { y: 0})
+            .fromTo(vertical3, {x: 0, y: '100%'}, { y: 0})
+            // .fromTo(vertical1, {x: -(window.innerWidth+horizontal2Width), y: '100%'}, { y: 0})
+            // .fromTo(vertical2, {x: -((window.innerWidth*2)+horizontal2Width), y: '100%'}, { y: 0})
+            // .fromTo(vertical3, {x: -((window.innerWidth*3)+horizontal2Width), y: '100%'}, { y: 0})
+
+        ScrollTrigger.create({
+            animation: tl,
+            trigger: horSec,
+            start: 'top top',
+            end: () => "+="  + (horSec.offsetWidth * 2),
+            scrub: 2,
+            pin: true,
+            markers: true,
+        })
     })
-})
+}
+
+const mediaQuery = window.matchMedia(
+    `(max-width: 1280px)`
+);
+
+if (!mediaQuery.matches) {
+    initMainPageAnim()
+}

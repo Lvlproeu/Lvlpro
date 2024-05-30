@@ -6,8 +6,19 @@
     justify-content: space-between;
     align-items: center;
     width: calc(100vw - 80px*2);
+    @media ($max1440) {
+      width: calc(100vw - 40px*2);
+    }
+    @media ($max1023) {
+      width: 100%;
+    }
     .btn {
       align-self: normal;
+    }
+    &-link {
+      @media (max-width: 600px) {
+        display: none;
+      }
     }
   }
   &__body {
@@ -73,6 +84,7 @@
       flex-wrap: wrap;
       width: 100%;
     }
+
   }
   &__video-item {
     display: flex;
@@ -80,6 +92,9 @@
     gap: 16px;
     @media ($max1279) {
       width: calc(100% / 2 - 20px / 2);
+    }
+    @media (max-width: 600px) {
+      width: 100%;
     }
     &:nth-child(even) {
       margin-top: 100px;
@@ -125,4 +140,10 @@
   white-space: nowrap;
   align-items: center;
   color: #fff;
+  @media ($max1279) {
+    white-space: normal;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+  }
 }

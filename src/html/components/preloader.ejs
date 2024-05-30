@@ -138,13 +138,11 @@
     
     setTimeout(() => {
         preloaderLine.style.width = '80%';
-        preloaderLine.ontransitionend = (e) => {
-            hidePreloader(e);
-        } 
+        preloaderLine.addEventListener('webkitTransitionEnd', hidePreloader);
     }, 100);
 
     const doActionHideLoader = function() {
-        window.preloaderLine.removeEventListener('transitionend', hidePreloader)
+        window.preloaderLine.removeEventListener('webkitTransitionEnd', hidePreloader)
         window.preloaderLine.style.transitionDuration = '0.1s';
         window.preloaderLine.style.width = '100%';
         window.preloader.classList.add('_hide');
@@ -156,11 +154,11 @@
         }, 500);
     }
 
-    preloader.ontransitionend = (e) => {
+    preloader.addEventListener('webkitTransitionEnd', (e) => {
         e.preventDefault();
         e.stopPropagation();
         if (e.target.classList.contains('js-preloader')) {
             document.body.classList.add('_hide-loader');
         }
-    }
+    })
 </script>

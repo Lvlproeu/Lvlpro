@@ -138,7 +138,9 @@
     
     setTimeout(() => {
         preloaderLine.style.width = '80%';
-        preloaderLine.addEventListener('transitionend', hidePreloader);
+        preloaderLine.ontransitionend = (e) => {
+            hidePreloader(e);
+        } 
     }, 100);
 
     const doActionHideLoader = function() {
@@ -154,11 +156,11 @@
         }, 500);
     }
 
-    preloader.addEventListener('transitionend', (e) => {
+    preloader.ontransitionend = (e) => {
         e.preventDefault();
         e.stopPropagation();
         if (e.target.classList.contains('js-preloader')) {
             document.body.classList.add('_hide-loader');
         }
-    })
+    }
 </script>

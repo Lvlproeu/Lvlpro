@@ -11,7 +11,7 @@ const footer = require('./layouts/basic/footer.ejs');
     <section class="section">
         <div class="main-screen layout">
             <div class="main-screen__bg">
-                <video muted loop playsinline src="videos/showreel_website_main.mp4" oncanplay="this.videoCanPlay = true" class="js-video-mainscreen"></video>
+                <video muted loop playsinline src="videos/showreel_website_main.mp4" class="js-video-mainscreen"></video>
             </div>
             <div class="container">
                 <div class="main-screen__body">
@@ -95,7 +95,7 @@ const footer = require('./layouts/basic/footer.ejs');
                         <div class="info-screen__video-row section-horizontal-1__video">
                             <div class="info-screen__video-item">
                                 <div class="info-screen__video-bx">
-                                    <video preload="none" muted loop playsinline autoplay src="videos/content-video-01.webm"></video>
+                                    <video class="lazyload" muted loop playsinline autoplay data-src="videos/content-video-01.webm" src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="></video>
                                 </div>
                                 <div class="info-screen__video-text">
                                     <div class="fs-20">Codici</div>
@@ -104,7 +104,7 @@ const footer = require('./layouts/basic/footer.ejs');
                             </div>
                             <div class="info-screen__video-item">
                                 <div class="info-screen__video-bx">
-                                    <video preload="none" muted loop playsinline autoplay src="videos/content-video-02.webm"></video>
+                                    <video class="lazyload" muted loop playsinline autoplay data-src="videos/content-video-02.webm" src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="></video>
                                 </div>
                                 <div class="info-screen__video-text">
                                     <div class="fs-20">Codici</div>
@@ -113,7 +113,7 @@ const footer = require('./layouts/basic/footer.ejs');
                             </div>
                             <div class="info-screen__video-item">
                                 <div class="info-screen__video-bx">
-                                    <video preload="none" muted loop playsinline autoplay src="videos/content-video-03.webm"></video>
+                                    <video class="lazyload" muted loop playsinline autoplay data-src="videos/content-video-03.webm" src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="></video>
                                 </div>
                                 <div class="info-screen__video-text">
                                     <div class="fs-20">Codici</div>
@@ -122,7 +122,7 @@ const footer = require('./layouts/basic/footer.ejs');
                             </div>
                             <div class="info-screen__video-item">
                                 <div class="info-screen__video-bx">
-                                    <video preload="metadata" muted loop playsinline autoplay src="videos/content-video-04.webm"></video>
+                                    <video class="lazyload" muted loop playsinline autoplay data-src="videos/content-video-04.webm" src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="></video>
                                 </div>
                                 <div class="info-screen__video-text">
                                     <div class="fs-20">Codici</div>

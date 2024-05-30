@@ -89,7 +89,6 @@
 	"target": "web",
 	"dependencies": {
 		"@fancyapps/ui": "^5.0.16",
-		"aos": "^3.0.0-beta.6",
 		"axios": "^1.6.8",
 		"gsap": "^3.12.5",
 		"imask": "^7.6.0",
@@ -97,6 +96,7 @@
 		"scrollmagic": "^2.0.8",
 		"scrollmagic-plugin-gsap": "^1.0.4",
 		"slim-select": "^2.7.1",
-		"swiper": "^8.4.5"
+		"swiper": "^8.4.5",
+		"vanilla-lazyload": "^19.1.3"
 	}
 }

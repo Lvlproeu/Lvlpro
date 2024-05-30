@@ -67,7 +67,7 @@ function initModules() {
 				document.body.classList.add('_hide-overlay-page-after');
 			}
 		} else {
-			const interval = setInterval(() => {
+			const interval = window.setInterval(() => {
 				if (videoMainScreen.videoCanPlay) {
 					clearInterval(interval);
 					document.body.classList.add('_loaded');

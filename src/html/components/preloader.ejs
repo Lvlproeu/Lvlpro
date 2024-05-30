@@ -113,34 +113,46 @@
         document.body.classList.add('_lock');
         document.body.style.paddingRight = scrollbarWidth + 'px';
     }, 1);
+
     const preloader = document.querySelector('.js-preloader');
+    const preloaderLine = document.querySelector('.js-preloader-line');
     window.preloader = preloader;
-    const preloaderLine = preloader.querySelector('.js-preloader-line');
-    setTimeout(() => {
-        preloaderLine.style.width = '80%';
-    }, 100);
+    window.preloaderLine = preloaderLine;
+
 
     hidePreloader = (e) => {
         e.preventDefault();
         e.stopPropagation();
-        const interval = setInterval(() => {
-            if (document.body.classList.contains('_loaded')) {
-                clearInterval(interval);
-                preloaderLine.removeEventListener('transitionend', hidePreloader)
-                preloaderLine.style.transitionDuration = '0.1s';
-                preloaderLine.style.width = '100%';
-                preloader.classList.add('_hide');
-                document.body.classList.remove('_lock');
-                document.body.style.paddingRight = '';
-                setTimeout(() => {
-                    const event = new Event('loaderHide');
-                    window.dispatchEvent(event);
-                }, 500);
-            }
-        }, 100);
-    }
 
-    preloaderLine.addEventListener('transitionend', hidePreloader);
+        if (document.body.classList.contains('_loaded')) {
+            doActionHideLoader();
+        } else {
+            const int = setInterval(() => {
+                if (document.body.classList.contains('_loaded')) {
+                    clearInterval(int);
+                    doActionHideLoader();
+                }
+            }, 100);
+        }
+    }
+    
+    setTimeout(() => {
+        preloaderLine.style.width = '80%';
+        preloaderLine.addEventListener('transitionend', hidePreloader);
+    }, 100);
+
+    const doActionHideLoader = function() {
+        window.preloaderLine.removeEventListener('transitionend', hidePreloader)
+        window.preloaderLine.style.transitionDuration = '0.1s';
+        window.preloaderLine.style.width = '100%';
+        window.preloader.classList.add('_hide');
+        document.body.classList.remove('_lock');
+        document.body.style.paddingRight = '';
+        setTimeout(() => {
+            const event = new Event('loaderHide');
+            window.dispatchEvent(event);
+        }, 500);
+    }
 
     preloader.addEventListener('transitionend', (e) => {
         e.preventDefault();

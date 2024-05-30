@@ -16,12 +16,18 @@ import { initLatestProjects } from './modules/latestProjects';
 import { initOverlayPage } from './modules/overlayPage';
 import { initScrollObserver } from './modules/scrollObserver';
 
+/**
+ * Длительность оверлея открытия страницы. 
+ * При изменении значения изменить длительность в стилях в классе .overlay-page и this.data.time в OverlayPage (overlayPage.js)
+ */
+const overlayPageAfterTime = 500;
+
 const initMainscreen = function () {
 	setTimeout(() => {
 		if (!window.scrollObserver) {
 			initScrollObserver();
 		}
-	}, 500);
+	}, overlayPageAfterTime);
 
 	if (window.videoMainScreen) {
 		window.videoMainScreen.play();
@@ -48,13 +54,14 @@ function initModules() {
 	initWeLoveBanner();
 	initLatestProjects();
 
-	// случай, если вдруг нету лоадера на главной странице, но есть первый экран с видео
 	const videoMainScreen = document.querySelector('.js-video-mainscreen');
 
 	if (videoMainScreen) {
 		window.videoMainScreen = videoMainScreen;
 		if (videoMainScreen.videoCanPlay) {
 			document.body.classList.add('_loaded');
+
+			// Случай, если нету лоадера
 			if (!window.preloader) {
 				initMainscreen();
 				document.body.classList.add('_hide-overlay-page-after');
@@ -64,6 +71,8 @@ function initModules() {
 				if (videoMainScreen.videoCanPlay) {
 					clearInterval(interval);
 					document.body.classList.add('_loaded');
+
+					// Случай, если нету лоадера
 					if (!window.preloader) {
 						initMainscreen();
 						document.body.classList.add('_hide-overlay-page-after');
@@ -78,12 +87,13 @@ function initModules() {
 			if (!window.scrollObserver) {
 				initScrollObserver();
 			}
-		}, 500);
+		}, overlayPageAfterTime);
 	}
 }
 
 document.addEventListener('DOMContentLoaded', initModules);
 
+// случай, если есть лоадер
 window.addEventListener('loaderHide', () => {
 	initMainscreen();
 });

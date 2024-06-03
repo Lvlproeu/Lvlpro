@@ -1,0 +1,27 @@
+.overlay-page {
+    position: fixed;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 100;
+    background-color: $black-2;
+    transition-property: transform;
+    // при изменении значения изменить overlayPageAfterTime (app.js) и this.data.time в OverlayPage (overlayPage.js)
+    transition-duration: 0.5s;
+    &._before {
+        top: 100%;
+    }
+    &._next {
+        top: 0;
+    }
+}
+body._show-overlay-page-before {
+    .overlay-page._before {
+        transform: translateY(-100%);
+    }
+}
+body._hide-overlay-page-after {
+    .overlay-page._after {
+        transform: translateY(-100%);
+    }
+}

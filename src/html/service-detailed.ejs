@@ -109,7 +109,7 @@ const footer = require('./layouts/basic/footer.ejs');
             </div>
         </div>
     </section>
-    <section class="steps-solve mb-160 js-steps-solve">
+    <section class="steps-solve layout mb-160 js-steps-solve">
         <div class="container">
             <div class="head-section">
                 <div class="title title-arrow fs-100 fs-32-mob">
@@ -238,7 +238,7 @@ const footer = require('./layouts/basic/footer.ejs');
             </div>
         </div>
     </section>
-    <section class="latest-projects js-latest-projects layout">
+    <section class="latest-projects layout js-latest-projects">
         <div class="container">
             <div class="head-section">
                 <div class="overflow-hidden js-scroll-observe-el">
@@ -246,21 +246,21 @@ const footer = require('./layouts/basic/footer.ejs');
                 </div>
                 <div class="head-section__btn-wrapper anim-opacity js-scroll-observe-el" data-duration="0.5">
                     <a href="#" class="btn c-red hover-line hide-mobile">
-                        <svg width="24" height="25" viewBox="0 0 24 25" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <path d="M15 12.5L19.5 17L15 21.5M6 3.5V17H18" stroke="currentColor" stroke-width="1.5" stroke-linecap="square"/>
-                        </svg>
                         View all projects
+                        <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M3.125 10H16.3748M11.25 15.625L16.875 10L11.25 4.375" stroke="currentColor" stroke-width="1.5" stroke-linecap="square"/>
+                        </svg>
                     </a>
                 </div>
             </div>
             <div class="latest-projects__wrapper js-latest-projects-wrapper">
-                <div class="latest-projects__row js-latest-projects-row">
+                <div class="latest-projects__row anim-opacity js-scroll-observe-el js-latest-projects-row" data-duration="0.3" data-delay="0.3" data-ratio="0">
                     <div class="latest-projects__col">
                         <a href="#" class="latest-projects__item">
                             <div class="latest-projects__video item-response">
                                 <video class="lazyload" muted loop playsinline autoplay data-src="videos/content-video-01.webm" src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="></video>
                             </div>
-                            <div class="latest-projects__text">
+                            <div class="latest-projects__text fs-20">
                                 <div>Codici</div>
                                 <div class="latest-projects__text-name c-grey">Video production</div>
                             </div>
@@ -271,7 +271,7 @@ const footer = require('./layouts/basic/footer.ejs');
                             <div class="latest-projects__video item-response">
                                 <video class="lazyload" muted loop playsinline autoplay data-src="videos/content-video-02.webm" src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="></video>
                             </div>
-                            <div class="latest-projects__text">
+                            <div class="latest-projects__text fs-20">
                                 <div>Codici</div>
                                 <div class="latest-projects__text-name c-grey">Video production</div>
                             </div>
@@ -282,7 +282,7 @@ const footer = require('./layouts/basic/footer.ejs');
                             <div class="latest-projects__video item-response">
                                 <video class="lazyload" muted loop playsinline autoplay data-src="videos/content-video-03.webm" src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="></video>
                             </div>
-                            <div class="latest-projects__text">
+                            <div class="latest-projects__text fs-20">
                                 <div>Codici</div>
                                 <div class="latest-projects__text-name c-grey">Video production</div>
                             </div>
@@ -293,7 +293,7 @@ const footer = require('./layouts/basic/footer.ejs');
                             <div class="latest-projects__video item-response">
                                 <video class="lazyload" muted loop playsinline autoplay data-src="videos/content-video-04.webm" src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="></video>
                             </div>
-                            <div class="latest-projects__text">
+                            <div class="latest-projects__text fs-20">
                                 <div>Codici</div>
                                 <div class="latest-projects__text-name c-grey">Video production</div>
                             </div>
@@ -303,14 +303,15 @@ const footer = require('./layouts/basic/footer.ejs');
             </div>
             <div class="mt-24 show-mobile">
                 <a href="#" class="btn c-red hover-line">
-                    <svg width="24" height="25" viewBox="0 0 24 25" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <path d="M15 12.5L19.5 17L15 21.5M6 3.5V17H18" stroke="currentColor" stroke-width="1.5" stroke-linecap="square"/>
+                    <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M3.125 10H16.3748M11.25 15.625L16.875 10L11.25 4.375" stroke="currentColor" stroke-width="1.5" stroke-linecap="square"/>
                     </svg>
                     View all projects
                 </a>
             </div>
         </div>
     </section>
+
 </main>
 <div class="overlay-page _before" style="position: fixed;left: 0;width: 100%;height: 100%;z-index: 100;background-color: #222222; top: 100%"></div>
 <div class="overlay-page _after" style="position: fixed;left: 0;width: 100%;height: 100%;z-index: 100;background-color: #222222; top: 0"></div>

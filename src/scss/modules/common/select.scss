@@ -105,6 +105,23 @@
     margin: 16px 0;
     overflow-x: hidden;
     overflow-y: auto;
+    &::-webkit-scrollbar {
+      background: #F1F1F1;
+      width: 8px;
+      border-radius: 8px;
+    }
+    &::-webkit-scrollbar-thumb {
+      border-radius: 8px;
+      background: #DADADA;
+      transition: .25s background-color ease;
+      cursor: pointer;
+      &:hover {
+        background-color: $red;
+      }
+      &:active {
+        background-color: $red;
+      }
+    }
   }
   &-option {
     position: relative;

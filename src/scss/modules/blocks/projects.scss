@@ -111,7 +111,13 @@
       }
     }
   }
-
+  &__select {
+    display: none;
+    @media ($max767) {
+      width: 100%;
+      display: block;
+    }
+  }
   &__more {
     margin-top: 40px;
     display: flex;

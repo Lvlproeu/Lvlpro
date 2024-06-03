@@ -19,6 +19,14 @@
       @media (max-width: 600px) {
         display: none;
       }
+      &--mobile {
+        display: none;
+
+        @media (max-width: 600px) {
+          display: inline-flex;
+          margin-top: 24px;
+        }
+      }
     }
   }
   &__body {
@@ -90,6 +98,19 @@
     display: flex;
     flex-direction: column;
     gap: 16px;
+    div {
+      transition: .25s color ease;
+    }
+    @media ($hover) {
+      &:hover {
+        .info-screen__video-text {
+          div {
+            color: $red;
+          }
+
+        }
+      }
+    }
     @media ($max1279) {
       width: calc(100% / 2 - 20px / 2);
     }

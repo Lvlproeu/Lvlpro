@@ -268,8 +268,13 @@ h6 {
         }
     }
 }
-.mt-24 {
-    margin-top: 24px;
+.mt {
+    &-24 {
+        margin-top: 24px;
+    }
+    &-40 {
+        margin-top: 40px;
+    }
 }
 .pt {
     &-80 {

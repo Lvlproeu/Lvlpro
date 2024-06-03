@@ -51,13 +51,13 @@ const footer = require('./layouts/basic/footer.ejs');
             </div>
         </div>
     </section>
-    <section class="mb-160">
+    <section class="mb-80">
         <div class="container">
             <div class="head-section">
                 <div class="overflow-hidden js-scroll-observe-el">
                     <div class="title fs-100 fs-32-mob anim-up-from-overflow js-scroll-observe-el-inner" data-duration="0.5">Design</div>
                 </div>
-                <div class="head-section__btn-wrapper anim-opacity js-scroll-observe-el" data-duration="0.5">
+                <div class="hide-mobile anim-opacity js-scroll-observe-el" data-duration="0.5">
                     <button type="button" data-popup-trigger="feedback" class="btn c-red hover-line">
                         <svg width="24" height="25" viewBox="0 0 24 25" fill="none" xmlns="http://www.w3.org/2000/svg">
                             <path d="M15 12.5L19.5 17L15 21.5M6 3.5V17H18" stroke="currentColor" stroke-width="1.5" stroke-linecap="square"/>
@@ -66,7 +66,7 @@ const footer = require('./layouts/basic/footer.ejs');
                     </button>
                 </div>
             </div>
-            <div class="links-cases js-scroll-observe-group" data-duration="0.5" data-delay-group="0.5">
+            <div class="links-cases js-scroll-observe-group" data-duration="0.5" data-delay-group="0.5" data-ratio="0.5">
                 <div class="links-cases__wrapper anim-opacity js-scroll-observe-group-el">
                     <a href="#" class="links-cases__row">
                         <div class="links-cases__title title fs-40">Branding</div>
@@ -107,9 +107,17 @@ const footer = require('./layouts/basic/footer.ejs');
                     </a>
                 </div>
             </div>
+            <div class="show-mobile mt-40 anim-opacity js-scroll-observe-el" data-duration="0.5">
+                <button type="button" data-popup-trigger="feedback" class="btn c-red hover-line">
+                    <svg width="24" height="25" viewBox="0 0 24 25" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M15 12.5L19.5 17L15 21.5M6 3.5V17H18" stroke="currentColor" stroke-width="1.5" stroke-linecap="square"/>
+                    </svg>
+                    Boost your project
+                </button>
+            </div>
         </div>
     </section>
-    <section class="steps-solve layout mb-160 js-steps-solve">
+    <section class="steps-solve layout js-steps-solve">
         <div class="container">
             <div class="head-section">
                 <div class="title title-arrow fs-100 fs-32-mob">
@@ -244,7 +252,7 @@ const footer = require('./layouts/basic/footer.ejs');
                 <div class="overflow-hidden js-scroll-observe-el">
                     <div class="title fs-100 fs-32-mob anim-up-from-overflow js-scroll-observe-el-inner" data-duration="0.5">Latest projects</div>
                 </div>
-                <div class="head-section__btn-wrapper anim-opacity js-scroll-observe-el" data-duration="0.5">
+                <div class="anim-opacity js-scroll-observe-el" data-duration="0.5">
                     <a href="#" class="btn c-red hover-line hide-mobile">
                         View all projects
                         <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">

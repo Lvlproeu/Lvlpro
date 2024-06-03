@@ -48,10 +48,9 @@ export default class Menu {
 	}
 
 	closeMenu() {
-		this.container.classList.remove(this.data.openMenu);
-
-        if (this.isMenuOpen) {
+		if (this.isMenuOpen) {
             bodyLock.unlock();
+			this.container.classList.remove(this.data.openMenu);
         }
 	}
 

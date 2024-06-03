@@ -20,6 +20,7 @@ export default class Popup {
 			openDefault: 'data-open-default',
 		};
 
+		this.header = document.querySelector('.js-header');
 		this.triggers = document.querySelectorAll(
 			`[data-popup-trigger="${this.data.name}"]`
 		);
@@ -91,7 +92,10 @@ export default class Popup {
 
 	closeCurrent() {
 		this.selector.classList.remove(this.data.open);
-		bodyLock.unlock();
+
+		if (!this.header.instanceHeader.menu.isMenuOpen) {
+			bodyLock.unlock();
+		}
 
 		const form = this.selector.querySelector('.js-form');
 

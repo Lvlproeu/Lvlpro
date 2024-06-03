@@ -11,6 +11,7 @@ export default class Submenu {
 
 		this.data = {
 			submenuSelector: '.js-submenu',
+			linkSelector: 'a.nav-header__link',
 			wrapperLastLvlSelector: '.js-wrapper-last-lvl',
 			openSubmenu: '_open-submenu',
 			openLastLvl: '_open-last-lvl',
@@ -20,7 +21,6 @@ export default class Submenu {
 		this.triggersLastLvl = this.container.querySelectorAll(
 			'.js-trigger-last-lvl'
 		);
-		
 
 		this.wrapper = null;
 		this.wrapperLastLvl = null;
@@ -30,48 +30,80 @@ export default class Submenu {
 
 	init() {
 		this.bind();
-
-		this.addListenerTriggerClick();
-		this.addListenerMouseEnter();
+		this.addListeners();
 	}
 
 	bind() {
-		this.onTriggerClick = this.onTriggerClick.bind(this);
-		this.onMouseenter = this.onMouseenter.bind(this);
+		this.onMouseEnter = this.onMouseEnter.bind(this);
+		this.onMouseLeave = this.onMouseLeave.bind(this);
+		this.onMouseMove = this.onMouseMove.bind(this);
+		this.onMouseenterLastLvl = this.onMouseenterLastLvl.bind(this);
 	}
 
-	addListenerTriggerClick() {
-		for (const el of this.triggers) {
-			el.addEventListener('click', this.onTriggerClick);
-		}
+	addListeners() {
+		this.addListenerMouseEnter();
+		this.addListenerMouseLeave();
+		this.addListenerMouseMove();
+		this.addListenerMouseEnterLastLvl();
 	}
 
 	addListenerMouseEnter() {
-		for (const el of this.triggersLastLvl) {
-			el.addEventListener('mouseenter', this.onMouseenter);
+		for (const el of this.triggers) {
+			el.addEventListener('mouseenter', this.onMouseEnter);
 		}
 	}
 
-	onTriggerClick(e) {
+	addListenerMouseMove() {
+		this.container.addEventListener('mousemove', this.onMouseMove);
+	}
+
+	addListenerMouseLeave() {
+		this.container.addEventListener('mouseleave', this.onMouseLeave);
+	}
+
+	addListenerMouseEnterLastLvl() {
+		for (const el of this.triggersLastLvl) {
+			el.addEventListener('mouseenter', this.onMouseenterLastLvl);
+		}
+	}
+
+	onMouseEnter(e) {
 		e.preventDefault();
 		const { target } = e;
 
-		if (this.wrapper && !this.isSubmenuOpen) {
+		// Случай, если будет несколько подменю
+		if (this.wrapper && this.isSubmenuOpen) {
 			this.wrapper.classList.remove(this.data.openSubmenu);
 			this.container.classList.remove(this.data.openSubmenu);
+			this.wrapper = null;
 		}
 
 		this.wrapper = target.closest(this.data.submenuSelector);
-		this.wrapper.classList.toggle(this.data.openSubmenu);
-		this.container.classList.toggle(this.data.openSubmenu);
+		this.wrapper.classList.add(this.data.openSubmenu);
+		this.container.classList.add(this.data.openSubmenu);
+	}
 
-		if (!this.isSubmenuOpen) {
-			this.closeLastLvl();
+	onMouseLeave(e) {
+		e.stopPropagation();
+
+		if (this.isSubmenuOpen) {
+			this.closeSubmenu();
 		}
 	}
 
-	onMouseenter(e) {
-        e.stopPropagation();
+	onMouseMove(e) {
+		e.stopPropagation();
+
+		const { target } = e;
+		const isLink = target.closest(this.data.linkSelector);
+
+		if (this.isSubmenuOpen && isLink) {
+			this.closeSubmenu();
+		}
+	}
+
+	onMouseenterLastLvl(e) {
+		e.stopPropagation();
 
 		const { target } = e;
 
@@ -87,7 +119,7 @@ export default class Submenu {
 		if (this.wrapper) {
 			this.wrapper.classList.remove(this.data.openSubmenu);
 			this.container.classList.remove(this.data.openSubmenu);
-            this.wrapper = null;
+			this.wrapper = null;
 		}
 		this.closeLastLvl();
 	}
@@ -95,15 +127,20 @@ export default class Submenu {
 	closeLastLvl() {
 		if (this.wrapperLastLvl) {
 			this.wrapperLastLvl.classList.remove(this.data.openLastLvl);
-            this.wrapperLastLvl = null;
+			this.wrapperLastLvl = null;
 		}
 	}
 
 	get isSubmenuOpen() {
-		return this.wrapper && this.wrapper.classList.contains(this.data.openSubmenu);
+		return (
+			this.wrapper && this.wrapper.classList.contains(this.data.openSubmenu)
+		);
 	}
 
 	get isLastLvlOpen() {
-		return this.wrapperLastLvl && this.wrapperLastLvl.classList.contains(this.data.openLastLvl);
+		return (
+			this.wrapperLastLvl &&
+			this.wrapperLastLvl.classList.contains(this.data.openLastLvl)
+		);
 	}
 }

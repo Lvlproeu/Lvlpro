@@ -71,7 +71,7 @@ export default class Header {
 	onDocClick(e) {
 		const { target } = e;
 
-		if (this.isClickOutside(target) && this.submenu.isSubmenuOpen) {
+		if (this.switchLang.isCurTarget(target) && this.submenu.isSubmenuOpen) {
 			this.submenu.closeSubmenu();
 		}
 

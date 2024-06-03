@@ -18,6 +18,16 @@ body._hide-loader {
   opacity: 0;
   transition: opacity 0.5s 0.5s;
   &:not(._open-menu) {
+    .header {
+      &__actions {
+        @media ($max767) {
+          opacity: 0;
+          pointer-events: none;
+          transform: translateY(20px);
+          transition: all $time-03;
+        }
+      }
+    }
     .menu-header {
       @media ($max1023) {
         opacity: 0;
@@ -199,15 +209,21 @@ body._hide-loader {
   &__actions {
     z-index: 1;
     display: flex;
+    justify-content: space-between;
     align-items: center;
-    gap: 69px;
+    gap: 40px;
+    max-width: 410px;
+    width: 100%;
     margin-left: 69px;
+    @media ($max1440) {
+      max-width: 306px;
+    }
     @media ($max1279) {
-      gap: 40px;
       margin-left: 40px;
     }
     @media ($max1023) {
       flex: 1 1 auto;
+      max-width: 100%;
       justify-content: flex-end;
       gap: 69px;
     }
@@ -218,6 +234,7 @@ body._hide-loader {
       margin-top: 16px;
       margin-left: 0;
       gap: 12px;
+      transition: all $time-03 $time-03;
     }
     > div {
       line-height: 0;
@@ -237,6 +254,13 @@ body._hide-loader {
       height: 100%;
       &:last-child {
         display: none;
+      }
+    }
+  }
+  &__request {
+    .btn {
+      @media ($max767) {
+        color: $white;
       }
     }
   }
@@ -281,6 +305,7 @@ body._hide-loader {
 
     @media ($max767) {
       padding-top: 24px;
+      transition-delay: $time-03 * 3;
     }
     @media ($min1024) {
       display: none;
@@ -310,6 +335,9 @@ body._hide-loader {
 .nav-header {
   @media ($max1023) {
     transition: all $time-03 $time-03;
+  }
+  @media ($max767) {
+    transition-delay: $time-03 * 2;
   }
   &__list {
     display: flex;
@@ -583,6 +611,10 @@ body._hide-loader {
   &__trigger {
     position: relative;
     transition: color $time-03;
+
+    @media ($max767) {
+      color: $white;
+    }
 
     &:after {
       bottom: -1px;

@@ -1,12 +1,4 @@
 .latest-projects {
-  @media ($min1280) {
-    min-height: 100vh;
-    .container {
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-    }
-  }
   &__wrapper {
     display: flex;
     @media ($max1279) {

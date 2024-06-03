@@ -26,6 +26,18 @@
     @media ($max767) {
       margin: -12px;
     }
+    &._other-links {
+      @media ($max767) {
+        margin: -4px;
+      }
+      .footer {
+        &__col {
+          @media ($max767) {
+            padding: 4px;
+          }
+        }
+      }
+    }
   }
   &__col {
     width: 25%;

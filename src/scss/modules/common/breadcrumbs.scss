@@ -1,0 +1,49 @@
+.bradcrumbs {
+  position: relative;
+  z-index: 1;
+  font-size: 14px;
+  line-height: 1.4;
+  letter-spacing: -0.04em;
+  text-transform: uppercase;
+  margin-top: 240px;
+  @media ($max1440) {
+    margin-bottom: 20px;
+  }
+  @media ($max1023) {
+    display: none;
+  }
+  ul {
+    display: flex;
+  }
+  li {
+    display: flex;
+    &:last-child {
+      &:after {
+        display: none;
+      }
+    }
+    &:after {
+      content: "/";
+      flex-shrink: 0;
+      color: $grey;
+      margin: 0 4px;
+    }
+  }
+  a {
+    color: $grey;
+    transition: color $time-03;
+    @media ($hover) {
+      &:hover {
+        color: $red;
+      }
+    }
+  }
+  ~ .page {
+    @media ($max1023) {
+      margin-top: 176px;
+    }
+    @media ($max767) {
+      margin-top: 106px;
+    }
+  }
+}

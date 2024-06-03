@@ -13,7 +13,7 @@ export default class LatestProjects {
 		}
 
 		this.data = {
-			mediaQuery: '1023',
+			mediaQuery: '1279',
 		};
 
 		this.container = selector;

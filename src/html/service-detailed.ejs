@@ -6,7 +6,7 @@ const footer = require('./layouts/basic/footer.ejs');
 
 <%- headerBlack()-%>
 
-<div class="bradcrumbs anim-opacity js-scroll-observe-el" data-duration="0.5">
+<div class="bradcrumbs anim-opacity js-scroll-observe-el">
     <div class="container">
         <ul>
             <li>
@@ -29,14 +29,14 @@ const footer = require('./layouts/basic/footer.ejs');
                 <div class="head-main__start">
                     <div class="title title-arrow fs-160">
                         <div class="title-arrow__first overflow-hidden js-scroll-observe-el">
-                            <div class="anim-up-from-overflow js-scroll-observe-el-inner" data-duration="0.5">We create</div>
+                            <div class="anim-up-from-overflow js-scroll-observe-el-inner">We create</div>
                         </div>
                         <div class="title-arrow__second overflow-hidden js-scroll-observe-el">
-                            <div class="anim-up-from-overflow js-scroll-observe-el-inner" data-duration="0.5" data-delay="0.5">design</div>
+                            <div class="anim-up-from-overflow delay-05 js-scroll-observe-el-inner">design</div>
                         </div>
                     </div>
                 </div>
-                <div class="head-main__end c-grey anim-opacity js-scroll-observe-el" data-duration="0.5" data-delay="0.5">
+                <div class="head-main__end c-grey anim-opacity delay-05 js-scroll-observe-el">
                     <p>We conduct deep analytics, develop a unique design and take care of the convenience of interfaces for users</p>
                 </div>
             </div>
@@ -55,9 +55,9 @@ const footer = require('./layouts/basic/footer.ejs');
         <div class="container">
             <div class="head-section">
                 <div class="overflow-hidden js-scroll-observe-el">
-                    <div class="title fs-100 fs-32-mob anim-up-from-overflow js-scroll-observe-el-inner" data-duration="0.5">Design</div>
+                    <div class="title fs-100 fs-32-mob anim-up-from-overflow js-scroll-observe-el-inner">Design</div>
                 </div>
-                <div class="hide-mobile anim-opacity js-scroll-observe-el" data-duration="0.5">
+                <div class="hide-mobile anim-opacity js-scroll-observe-el">
                     <button type="button" data-popup-trigger="feedback" class="btn c-red hover-line">
                         <svg width="24" height="25" viewBox="0 0 24 25" fill="none" xmlns="http://www.w3.org/2000/svg">
                             <path d="M15 12.5L19.5 17L15 21.5M6 3.5V17H18" stroke="currentColor" stroke-width="1.5" stroke-linecap="square"/>
@@ -66,8 +66,8 @@ const footer = require('./layouts/basic/footer.ejs');
                     </button>
                 </div>
             </div>
-            <div class="links-cases js-scroll-observe-group" data-duration="0.5" data-delay-group="0.5" data-ratio="0.5">
-                <div class="links-cases__wrapper anim-opacity js-scroll-observe-group-el">
+            <div class="links-cases">
+                <div class="links-cases__wrapper anim-opacity js-scroll-observe-el">
                     <a href="#" class="links-cases__row">
                         <div class="links-cases__title title fs-40">Branding</div>
                         <div class="links-cases__text c-grey">
@@ -80,7 +80,7 @@ const footer = require('./layouts/basic/footer.ejs');
                         </div>
                     </a>
                 </div>
-                <div class="links-cases__wrapper anim-opacity js-scroll-observe-group-el">
+                <div class="links-cases__wrapper anim-opacity js-scroll-observe-el">
                     <a href="#" class="links-cases__row">
                         <div class="links-cases__title title fs-40">Identity</div>
                         <div class="links-cases__text c-grey">
@@ -93,7 +93,7 @@ const footer = require('./layouts/basic/footer.ejs');
                         </div>
                     </a>
                 </div>
-                <div class="links-cases__wrapper anim-opacity js-scroll-observe-group-el">
+                <div class="links-cases__wrapper anim-opacity js-scroll-observe-el">
                     <a href="#" class="links-cases__row">
                         <div class="links-cases__title title fs-40">UX/UI design</div>
                         <div class="links-cases__text c-grey">
@@ -107,7 +107,7 @@ const footer = require('./layouts/basic/footer.ejs');
                     </a>
                 </div>
             </div>
-            <div class="show-mobile mt-40 anim-opacity js-scroll-observe-el" data-duration="0.5">
+            <div class="show-mobile mt-40 anim-opacity js-scroll-observe-el">
                 <button type="button" data-popup-trigger="feedback" class="btn c-red hover-line">
                     <svg width="24" height="25" viewBox="0 0 24 25" fill="none" xmlns="http://www.w3.org/2000/svg">
                         <path d="M15 12.5L19.5 17L15 21.5M6 3.5V17H18" stroke="currentColor" stroke-width="1.5" stroke-linecap="square"/>
@@ -122,10 +122,10 @@ const footer = require('./layouts/basic/footer.ejs');
             <div class="head-section">
                 <div class="title title-arrow fs-100 fs-32-mob">
                     <div class="title-arrow__first overflow-hidden js-scroll-observe-el">
-                        <div class="anim-up-from-overflow js-scroll-observe-el-inner" data-duration="0.5">How we will solve</div>
+                        <div class="anim-up-from-overflow js-scroll-observe-el-inner">How we will solve</div>
                     </div>
                     <div class="title-arrow__second overflow-hidden js-scroll-observe-el">
-                        <div class="anim-up-from-overflow js-scroll-observe-el-inner" data-duration="0.5" data-delay="0.5">your problem</div>
+                        <div class="anim-up-from-overflow delay-05 js-scroll-observe-el-inner">your problem</div>
                     </div>
                 </div>
             </div>
@@ -213,8 +213,13 @@ const footer = require('./layouts/basic/footer.ejs');
     <section class="we-love-banner section bg-black c-white js-we-love-banner">
         <div class="container">
             <div class="we-love-banner__title title text-center fs-160">
-                <div class="overflow-hidden js-scroll-observe-el">
-                    <div class="anim-up-from-overflow js-scroll-observe-el-inner" data-duration="0.5">We love what we do and we do it well</div>
+                <div>
+                    <div class="overflow-hidden js-scroll-observe-el">
+                        <div class="anim-up-from-overflow js-scroll-observe-el-inner">We love what we do</div>
+                    </div>
+                    <div class="overflow-hidden js-scroll-observe-el">
+                        <div class="anim-up-from-overflow delay-05 js-scroll-observe-el-inner">and we do it well</div>
+                    </div>
                 </div>
             </div>
             <div class="we-love-banner__images js-we-love-banner-images">
@@ -250,9 +255,9 @@ const footer = require('./layouts/basic/footer.ejs');
         <div class="container">
             <div class="head-section">
                 <div class="overflow-hidden js-scroll-observe-el">
-                    <div class="title fs-100 fs-32-mob anim-up-from-overflow js-scroll-observe-el-inner" data-duration="0.5">Latest projects</div>
+                    <div class="title fs-100 fs-32-mob anim-up-from-overflow js-scroll-observe-el-inner">Latest projects</div>
                 </div>
-                <div class="anim-opacity js-scroll-observe-el" data-duration="0.5">
+                <div class="anim-opacity js-scroll-observe-el">
                     <a href="#" class="btn c-red hover-line hide-mobile">
                         View all projects
                         <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -262,7 +267,7 @@ const footer = require('./layouts/basic/footer.ejs');
                 </div>
             </div>
             <div class="latest-projects__wrapper js-latest-projects-wrapper">
-                <div class="latest-projects__row anim-opacity js-scroll-observe-el js-latest-projects-row" data-duration="0.3" data-delay="0.3" data-ratio="0">
+                <div class="latest-projects__row anim-opacity js-scroll-observe-el js-latest-projects-row" data-ratio="0">
                     <div class="latest-projects__col">
                         <a href="#" class="latest-projects__item">
                             <div class="latest-projects__video item-response">

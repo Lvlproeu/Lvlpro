@@ -14,28 +14,26 @@ const footer = require('./layouts/basic/footer.ejs');
             <div class="container">
                 <div class="main-screen__body">
                     <div class="main-screen__row">
-                        <div class="bradcrumbs anim-opacity js-scroll-observe-el" data-duration="0.5">
-                            <div class="container">
-                                <ul>
-                                    <li>
-                                        <a href="./main.html">Home</a>
-                                    </li>
-                                    <li>
-                                        <span>About</span>
-                                    </li>
-                                </ul>
-                            </div>
+                        <div class="bradcrumbs anim-opacity js-scroll-observe-el">
+                            <ul>
+                                <li>
+                                    <a href="./main.html">Home</a>
+                                </li>
+                                <li>
+                                    <span>About</span>
+                                </li>
+                            </ul>
                         </div>
                         <div class="main-screen__title">
                             <div class="fs-160 title overflow-hidden js-scroll-observe-el">
-                                <div class="anim-up-from-overflow js-scroll-observe-el-inner" data-duration="0.5">
+                                <div class="anim-up-from-overflow js-scroll-observe-el-inner">
                                     We create
                                 </div>
                             </div>
-                            <div class="fs-20 main-screen__desc anim-opacity js-scroll-observe-el" data-duration="0.5" data-delay="1">Full cycle agency that turns vision into income</div>
+                            <div class="fs-20 main-screen__desc anim-opacity delay-1 js-scroll-observe-el">Full cycle agency that turns vision into income</div>
                         </div>
-                        <div class="overflow-hidden js-scroll-observe-el">
-                            <div class="swiper fs-160 title js-titles-slider main-screen__slider anim-up-from-overflow js-scroll-observe-el-inner" data-duration="0.5" data-delay="0.5">
+                        <div class="main-screen__slider-block fs-160 title overflow-hidden js-scroll-observe-el">
+                            <div class="swiper js-titles-slider main-screen__slider anim-up-from-overflow delay-05 js-scroll-observe-el-inner">
                                 <div class="swiper-wrapper">
                                     <div class="swiper-slide">
                                         video production
@@ -51,7 +49,7 @@ const footer = require('./layouts/basic/footer.ejs');
                         </div>
                         <div class="fs-20 main-screen__desc _mobile">Full cycle agency that turns vision into income</div>
                     </div>
-                    <div class="main-screen__scroll fs-20 anim-opacity c-grey-2 js-scroll-observe-el" data-duration="0.5" data-delay="1">Scroll down</div>
+                    <div class="main-screen__scroll fs-20 anim-opacity delay-1 c-grey-2 js-scroll-observe-el">Scroll down</div>
                 </div>
 
             </div>
@@ -63,6 +61,7 @@ const footer = require('./layouts/basic/footer.ejs');
 
 </main>
 <div class="overlay-page _before" style="position: fixed;left: 0;width: 100%;height: 100%;z-index: 100;background-color: #222222; top: 100%"></div>
+<div class="overlay-page _after" style="position: fixed;left: 0;width: 100%;height: 100%;z-index: 100;background-color: #222222; top: 0"></div>
 <%- footer() -%>
 
 

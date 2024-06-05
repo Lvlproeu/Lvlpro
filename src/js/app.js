@@ -45,6 +45,8 @@ const initMainscreen = function () {
 	if (window.titleSlider) {
 		window.titleSlider.swiperSlider.autoplay.start();
 	}
+
+	document.body.classList.add('_hide-overlay-page-after');
 };
 
 function initModules() {
@@ -65,7 +67,7 @@ function initModules() {
 	initWeLoveBanner();
 	initLatestProjects();
 
-	document.body.classList.add('_loaded', '_hide-overlay-page-after');
+	document.body.classList.add('_loaded');
 
 	if (window.preloader) {
 		window.addEventListener('loaderHide', () => {

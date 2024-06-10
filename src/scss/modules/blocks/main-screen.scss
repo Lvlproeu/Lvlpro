@@ -47,6 +47,7 @@
     gap: 20px;
     .title {
       white-space: nowrap;
+      flex-shrink: 0;
     }
   }
   &__desc {
@@ -62,14 +63,9 @@
       }
     }
   }
-  &__slider {
+  &__slider-block{
     height: 1.3em;
     line-height: 1.3em;
-
-    @media ($max767) {
-      margin-bottom: 16px;
-    }
-
     &._animated {
       &:before{
         opacity: 1;
@@ -94,6 +90,14 @@
       @media ($max767) {
         display: none;
       }
+    }
+  }
+  &__slider {
+    height: 1.3em;
+    line-height: 1.3em;
+
+    @media ($max767) {
+      margin-bottom: 16px;
     }
       
     &.swiper {

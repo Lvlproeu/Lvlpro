@@ -299,6 +299,9 @@ h6 {
         padding-bottom: 100px;
     }
 }
+.bg-white {
+    background-color: $white;
+}
 .bg-black {
     background-color: $black;
 }
@@ -362,7 +365,7 @@ h6 {
                 margin-right: 4px;
                 margin-bottom: 0.35em;
                 opacity: 0;
-                transition: opacity 0.5s $time-03;
+                transition: opacity 0.5s 0.5s;
             }
         }
     }

@@ -23,12 +23,12 @@
       }
       &--active {
         border-top: 1px solid $black;
-        color: $black;
+        color: $black;  
         pointer-events: none;
       }
       &:hover {
-        border-top: 1px solid $black;
-        color: $black;
+        border-top: 1px solid $red;
+        color: $red;
       }
     }
   }

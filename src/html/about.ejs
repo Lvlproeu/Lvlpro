@@ -15,16 +15,14 @@ const footer = require('./layouts/basic/footer.ejs');
                 <div class="main-screen__body">
                     <div class="main-screen__row">
                         <div class="bradcrumbs anim-opacity js-scroll-observe-el" data-duration="0.5">
-                            <div class="container">
-                                <ul>
-                                    <li>
-                                        <a href="./main.html">Home</a>
-                                    </li>
-                                    <li>
-                                        <span>About</span>
-                                    </li>
-                                </ul>
-                            </div>
+                            <ul>
+                                <li>
+                                    <a href="./main.html">Home</a>
+                                </li>
+                                <li>
+                                    <span>About</span>
+                                </li>
+                            </ul>
                         </div>
                         <div class="main-screen__title">
                             <div class="fs-160 title overflow-hidden js-scroll-observe-el">
@@ -59,7 +57,36 @@ const footer = require('./layouts/basic/footer.ejs');
 
         </div>
     </section>
+    <section class="section section--mobile-normal">
+        <div class="info-screen layout">
+            <div class="container">
+                <div class="section__head mb-80">
+                    <div class="fs-70 title">
+                        <div class="overflow-hidden js-scroll-observe-el">
+                            <div class="anim-up-from-overflow js-scroll-observe-el-inner" data-duration="0.5">Turn your vision</div>
+                        </div>
+                        <div class="overflow-hidden js-scroll-observe-el">
+                            <div class="anim-up-from-overflow js-scroll-observe-el-inner" data-duration="0.5" data-delay="0.5">into income</div></div>
+                    </div>
+                </div>
+                <div class="info-screen__body" >
 
+                    <div class="info-screen__img overflow-hidden js-scroll-observe-el">
+                        <img class="anim-down-from-overflow js-scroll-observe-el-inner" data-duration="0.5" data-delay="0.5" loading="lazy" src="images/content/content-img-01.jpg" alt="">
+                    </div>
+                    <div class="info-screen__text anim-opacity js-scroll-observe-el" data-duration="0.5" data-delay="0.5" data-ratio="0.5">
+                        <p class="fs-20">LevelPro is a full cycle agency for b2c and b2b clients. We believe in the power of visual messages, meaningful design and strong web-development</p>
+                        <a href="#" class="hover-line btn c-red">
+                            Read about us
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M3.75 12H19.6497M13.5 18.75L20.25 12L13.5 5.25" stroke="currentColor" stroke-width="1.5" stroke-linecap="square"/>
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
 
 </main>
 <div class="overlay-page _before" style="position: fixed;left: 0;width: 100%;height: 100%;z-index: 100;background-color: #222222; top: 100%"></div>

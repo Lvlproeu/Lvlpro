@@ -1,0 +1,21 @@
+.professionals-screen {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  color: #fff;
+  gap: 40px;
+  &__text {
+    text-align: center;
+    padding: 0 100px;
+    img {
+      display: inline-block;
+      vertical-align: middle;
+    }
+  }
+  &__list {
+    display: flex;
+    align-items: center;
+    gap: 80px;
+  }
+}

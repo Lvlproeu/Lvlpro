@@ -117,13 +117,16 @@
     @media ($max1023) {
       width: 100%;
       max-width: 478px;
-      position: static;
+      position: relative;
       width: 100%;
     }
     &--1 {
-      top: pct-s(196, 920);
       left: 0;
       opacity: 1;
+      @media ($min1024) {
+        top: pct-s(196, 920);
+      }
+        
     }
     &--2 {
       top: pct-s(333, 920);

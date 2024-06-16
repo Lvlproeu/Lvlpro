@@ -12,6 +12,9 @@
     @media ($max1919) {
       max-width: 910px;
     }
+    @media ($max1023) {
+      max-width: 728px;
+    }
     @media ($max767) {
       max-width: 320px;
     }

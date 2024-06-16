@@ -1,6 +1,6 @@
 .anim-opacity {
     opacity: 0;
-    transition: opacity 0.5s;
+    transition: opacity 0.3s;
     &._animated {
         opacity: 1;
     }
@@ -12,7 +12,7 @@
     transform-origin: left top;
     transform: translateY(100%) rotate(30deg);
     &._animated {
-        animation: showTitle 1s both ease;
+        animation: showTitle 0.7s both ease;
     }
 }
 
@@ -32,7 +32,7 @@
         bottom: -2px;
         right: -2px;
         background-color: inherit;
-        transition: transform 0.5s;
+        transition: transform 0.3s;
     }
 }
 
@@ -64,11 +64,7 @@
 @keyframes showTitle {
     0% {
         opacity: 0;
-        transform: translateY(100%) rotate(3deg);
-    }
-    65% {
-        opacity: 1;
-        transform: translateY(0) rotate(3deg);
+        transform: translateY(100%) rotate(10deg);
     }
     100% {
         opacity: 1;

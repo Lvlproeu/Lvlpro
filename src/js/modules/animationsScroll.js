@@ -129,7 +129,7 @@ function initMainPageAnim() {
             end: () => "+="  + (horSec.offsetWidth * 2),
             scrub: 2,
             pin: true,
-            markers: true,
+            // markers: true,
         })
     })
 }

@@ -8,14 +8,72 @@
   &__text {
     text-align: center;
     padding: 0 100px;
+    @media ($max767) {
+      padding: 0;
+    }
     img {
       display: inline-block;
       vertical-align: middle;
+      @media ($max767) {
+        display: none;
+      }
     }
   }
   &__list {
     display: flex;
     align-items: center;
     gap: 80px;
+    flex-wrap: wrap;
+    text-align: center;
+    justify-content: center;
+    @media ($max767) {
+      gap: 8px;
+    }
+  }
+}
+
+.our-team {
+  &__row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 40px;
+    @media ($max1440) {
+      gap: 20px;
+    }
+  }
+  &__item {
+    width: calc(100% / 4 - 40px * 3 / 4);
+    display: block;
+    @media ($max1440) {
+      width: calc(100% / 4 - 20px * 3 / 4);
+    }
+    @media ($max1279) {
+      width: calc(100% / 3 - 20px * 2 / 3);
+    }
+    @media ($max767) {
+      width: calc(100% / 2 - 20px * 1 / 2);
+    }
+    @media ($max479) {
+      width: 100%;
+    }
+  }
+  &__img {
+    width: 100%;
+    padding-bottom: pct-s(462, 410);
+    position: relative;
+    margin-bottom: 16px;
+    img {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+  }
+  &__desc {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
   }
 }

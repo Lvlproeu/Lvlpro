@@ -1,0 +1,146 @@
+<%
+const headerBlack = require('./layouts/basic/header-black.ejs');
+const footer = require('./layouts/basic/footer.ejs');
+
+%>
+
+<%- headerBlack()-%>
+
+<div class="bradcrumbs bradcrumbs--center anim-opacity js-scroll-observe-el">
+    <div class="container">
+        <ul>
+            <li>
+                <a href="./main.html">Home</a>
+            </li>
+            <li>
+                <a href="./projects.html">Projects</a>
+            </li>
+            <li>
+                <span>Codici</span>
+            </li>
+        </ul>
+    </div>
+</div>
+
+<main class="page">
+    <section class="mb-80">
+        <div class="container">
+            <div class="head-main head-main--center">
+                <div class="head-main__start">
+                    <div class="title title-arrow fs-160">
+                        <div class="title-arrow__first overflow-hidden js-scroll-observe-el">
+                            <div class="anim-up-from-overflow js-scroll-observe-el-inner">Codici</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="projects-detailed">
+        <div class="container">
+            <div class="projects-detailed__nav anim-opacity delay-03 js-scroll-observe-el">
+                <div class="projects-detailed__nav-item">
+                    <div class="fs-14 c-grey">Services</div>
+                    <div class="fs-20">Video production</div>
+                </div>
+                <div class="projects-detailed__nav-item">
+                    <div class="fs-14 c-grey">Client</div>
+                    <div class="fs-20">Codici</div>
+                </div>
+                <div class="projects-detailed__nav-item">
+                    <div class="fs-14 c-grey">Industry</div>
+                    <div class="fs-20">Fashion</div>
+                </div>
+                <div class="projects-detailed__nav-item">
+                    <div class="fs-14 c-grey">Year</div>
+                    <div class="fs-20">2023</div>
+                </div>
+            </div>
+        </div>
+        <div class="projects-detailed__banner">
+            <img loading="lazy" src="images/content/project-detailed-banner-01.jpg" alt="">
+        </div>
+        <div class="projects-detailed__typography container layout">
+            <div class="projects-detailed__typography-section">
+                <div class="fs-14 c-grey">ABOUT PROJECT</div>
+                <div class="fs-20">
+                    Codici is a clothing store made from premium quality natural Italian cashmere.
+                </div>
+            </div>
+            <div class="projects-detailed__typography-section">
+                <div class="fs-14 c-grey">GOAL</div>
+                <div class="fs-20">
+                    To convey the elegance and sophistication of cashmere clothing through colorful and high-quality videos.
+                </div>
+            </div>
+            <div class="projects-detailed__typography-section">
+                <div class="fs-14 c-grey">AN APPROACH</div>
+                <div class="fs-20">
+                    Using high-quality shooting equipment, we managed to capture the quality of the materials. By choosing the right locations, we emphasized the elegance and practicality of the material. Having done the right installation, we created a beautiful picture and reached the right customers.
+                </div>
+            </div>
+            <div class="projects-detailed__typography-section">
+                <div class="fs-14 c-grey">RESULTS</div>
+                <div class="fs-20">
+                    Increased brand awareness. The quality and tenderness of the product were shown through the rollers. They attracted the attention of the target audience, which led to an increase in sales.
+                </div>
+            </div>
+        </div>
+
+        <div class="projects-detailed__banner">
+            <img loading="lazy" src="images/content/project-detailed-banner-02.jpg" alt="">
+        </div>
+
+        <div class="projects-detailed__images container layout">
+            <div class="projects-detailed__images-item">
+                <img loading="lazy" src="images/content/project-detailed-01.jpg" alt="">
+            </div>
+            <div class="projects-detailed__images-item">
+                <img loading="lazy" src="images/content/project-detailed-02.jpg" alt="">
+            </div>
+        </div>
+
+        <div class="projects-detailed__banner">
+            <img loading="lazy" src="images/content/project-detailed-banner-03.jpg" alt="">
+        </div>
+
+
+        <div class="container layout">
+            <div class="section__head section__head--center mb-80">
+                <div class="fs-70 title">
+                    <div class="overflow-hidden js-scroll-observe-el _animated">
+                        <div class="anim-up-from-overflow js-scroll-observe-el-inner _animated">Other case</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="projects-page__body">
+                <div class="projects-page__row anim-opacity delay-03 js-scroll-observe-el" data-ratio="0.5">
+                    <a href="#" class="projects-page__item">
+                        <div class="projects-page__item-video">
+                            <video class="lazyload" muted loop playsinline autoplay data-src="videos/content-video-01.webm" src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="></video>
+                        </div>
+                        <div class="projects-page__item-text">
+                            <div class="fs-20">Codici</div>
+                            <div class="fs-20 c-grey">Video production</div>
+                        </div>
+                    </a>
+                    <a href="#" class="projects-page__item">
+                        <div class="projects-page__item-video">
+                            <video class="lazyload" muted loop playsinline autoplay data-src="videos/content-video-02.webm" src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="></video>
+                        </div>
+                        <div class="projects-page__item-text">
+                            <div class="fs-20">Codici</div>
+                            <div class="fs-20 c-grey">Video production</div>
+                        </div>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+</main>
+<div class="overlay-page _before" style="position: fixed;left: 0;width: 100%;height: 100%;z-index: 100;background-color: #222222; top: 100%"></div>
+<div class="overlay-page _after" style="position: fixed;left: 0;width: 100%;height: 100%;z-index: 100;background-color: #222222; top: 0"></div>
+<%- footer() -%>
+
+

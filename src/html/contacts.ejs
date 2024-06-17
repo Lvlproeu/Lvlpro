@@ -1,0 +1,49 @@
+<%
+const headerWhite = require('./layouts/basic/header-white.ejs');
+const footer = require('./layouts/basic/footer.ejs');
+
+%>
+
+<%- headerWhite()-%>
+<main class="page">
+    <section class="section section--mobile-normal">
+        <div class="bg-black contacts layout container c-white">
+            <div class="bradcrumbs anim-opacity js-scroll-observe-el">
+                <ul>
+                    <li>
+                        <a href="./main.html">Home</a>
+                    </li>
+                    <li>
+                        <span>Contacts</span>
+                    </li>
+                </ul>
+            </div>
+
+            <div class="contacts__row anim-opacity delay-05 js-scroll-observe-el" data-ratio="0.5">
+
+                <div class="fs-160 title overflow-hidden js-scroll-observe-el mb-80">
+                    <div class="anim-up-from-overflow js-scroll-observe-el-inner">
+                        Contacts
+                    </div>
+                </div>
+
+                <div class="contacts__list">
+                    <div class="contacts__list-item">
+                        <div class="fs-20 c-grey-2">E-mail</div>
+                        <a href="mailto:lvlpro.eu@gmail.com" class="fs-40">lvlpro.eu@gmail.com</a>
+                    </div>
+                    <div class="contacts__list-item">
+                        <div class="fs-20 c-grey-2">Instagram</div>
+                        <a href="#" class="fs-40">@lvlpro.eu</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+</main>
+<div class="overlay-page _before" style="position: fixed;left: 0;width: 100%;height: 100%;z-index: 100;background-color: #222222; top: 100%"></div>
+<div class="overlay-page _after" style="position: fixed;left: 0;width: 100%;height: 100%;z-index: 100;background-color: #222222; top: 0"></div>
+<%- footer() -%>
+
+

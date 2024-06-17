@@ -47,6 +47,9 @@
 		.btn {
 			align-self: normal;
 		}
+		&--center {
+			justify-content: center;
+		}
 	}
 	&--vertical {
 		position: absolute;
@@ -61,6 +64,11 @@
 	&--mobile-normal {
 		@media ($max1279) {
 			height: auto;
+		}
+		&-479 {
+			@media ($max479) {
+				height: auto;
+			}
 		}
 	}
 }
